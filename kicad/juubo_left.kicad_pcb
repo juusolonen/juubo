@@ -156,7 +156,7 @@
 
   (footprint "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" (layer "F.Cu")
     (tstamp 04e6bfba-f73f-4523-9cf4-8cfa867eb8c7)
-    (at 198.12 86.36 90)
+    (at 195.58 86.36 90)
     (descr "Resistor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (attr smd)
@@ -1291,7 +1291,7 @@
 
   (footprint "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" (layer "F.Cu")
     (tstamp ad2cb4d3-7902-4459-b4c7-afae5f651794)
-    (at 200.66 86.36 90)
+    (at 198.12 86.36 90)
     (descr "Resistor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (attr smd)
