@@ -3,6 +3,11 @@ units:
   ky: U
   px: kx + 4
   py: ky + 4
+  dpx: kx + 6
+  dpy: ky + 6
+# M2 Screw Inserts
+  screwSize: 1.5
+  standoffSize: 2.5
 points:
   zones:
     matrix:
@@ -88,28 +93,105 @@ outlines:
         - ref: matrix_ring_top
           shift: [-0.5px,0.5py]
         - ref: matrix_middle_top
-          shift: [-0.1kx,0.6py]
+          shift: [-0.1px,0.6py]
         - ref: matrix_inner_top
           shift: [1.7px,0.4py]
         - ref: thumbs_space_cluster
-          shift: [-0.8px,0.5px]
+          shift: [-0.8px,0.py]
         - ref: thumbs_layer_cluster
-          shift: [3px, -0.2px]
+          shift: [3px, -0.2py]
         - ref: thumbs_layer_cluster
-          shift: [2.25px,-1.4px]
+          shift: [2.25px,-1.4py]
         - ref: thumbs_extra_cluster
-          shift: [1.3px,-2.3px]
+          shift: [1.3px,-2.3py]
         - ref: matrix_index_bottom
-          shift: [0.1px,-0.7px]
+          shift: [0.1px,-0.7py]
         - ref: matrix_pinky_bottom
-          shift: [-0.5px,-0.5px]
+          shift: [-0.5px,-0.5py]
+      fillet: 4
+  xlBoard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.5dpx,0.5dpy]
+        - ref: matrix_ring_top
+          shift: [-0.5dpx,0.5dpy]
+        - ref: matrix_middle_top
+          shift: [-0.1dpx,0.6dpy]
+        - ref: matrix_inner_top
+          shift: [1.7dpx,0.4dpy]
+        - ref: matrix_inner_bottom
+          shift: [1.4dpx,-0.8dpy]
+        - ref: thumbs_layer_cluster
+          shift: [2.9dpx, -0.2dpy]
+        - ref: thumbs_layer_cluster
+          shift: [2.1dpx,-1.4dpy]
+        - ref: thumbs_extra_cluster
+          shift: [1.3dpx,-2.15dpy]
+        - ref: matrix_index_bottom
+          shift: [0,-0.7dpy]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5dpx,-0.5dpy]
       fillet: 4
   combo:
     - name: board
     - operation: subtract
       name: keys
+  mounting:
+        - what: circle
+          radius: screwSize
+          where:
+            ref: [matrix_pinky_top]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: screwSize
+          where:
+            ref: [matrix_inner_top]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: screwSize
+          where:
+            ref: [matrix_pinky_bottom]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: screwSize
+          where:
+            ref: [thumbs_layer_cluster]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: screwSize
+          where:
+            ref: [thumbs_extra_cluster]
+            shift: [0.5kx, -0.3ky]
+  standoff:
+        - what: circle
+          radius: standoffSize
+          where:
+            ref: [matrix_pinky_top]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: standoffSize
+          where:
+            ref: [matrix_inner_top]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: standoffSize
+          where:
+            ref: [matrix_pinky_bottom]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: standoffSize
+          where:
+            ref: [thumbs_layer_cluster]
+            shift: [0.5kx, -0.3ky]
+        - what: circle
+          radius: standoffSize
+          where:
+            ref: [thumbs_extra_cluster]
+            shift: [0.5kx, -0.3ky]
 pcbs:
-  juubo_left_no_res:
+  juubo_left:
     outlines:
       main:
         outline: board
@@ -151,6 +233,26 @@ pcbs:
           ref: matrix_inner_home
           shift: [px,0.5px]
           rotate: -90
+      resistor:
+        what: resistor
+        where:
+          ref: matrix_inner_home
+        params:
+          PAD1: VCC
+          PAD2: P3
+        adjust:
+          shift: [1.2kx, -8]
+          rotate: -90
+      resistor2:
+        what: resistor
+        where:
+          ref: matrix_inner_home
+        params:
+          PAD1: VCC
+          PAD2: P2
+        adjust:
+          shift: [1.1kx, -8]
+          rotate: -90
       reset:
         what: button
         params:
@@ -173,5 +275,69 @@ pcbs:
             - matrix_inner_bottom
           shift: [1.7px, 0.3px]
           rotate: -90
+      holeTopLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_top]
+          shift: [0.5kx, -0.3ky]
+      holeTopInner:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_top]
+          shift: [0.5kx, -0.3ky]
+      holeBottomLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_bottom]
+          shift: [0.5kx, -0.3ky]
+      holeThumbLeft:
+        what: mountinghole
+        where:
+          ref: [thumbs_layer_cluster]
+          shift: [0.5kx, -0.3ky]
+      holeThumbsRoght:
+        what: mountinghole
+        where:
+          ref: [thumbs_extra_cluster]
+          shift: [0.5kx, -0.3ky]
+cases:
+  bottom:
+    - name: board
+      extrude: 1
+  xlBottom:
+    - name: xlBoard
+      extrude: 1
+  _outerWall:
+    - name: xlBoard
+      extrude: 4
+  _innerWall:
+    - name: board
+      extrude: 4
+  wall:
+    - what: case
+      name: _outerWall
+      operation: add
+    - what: case
+      name: _innerWall
+      operation: subtract
+  _holes:
+    - name: mounting
+      extrude: 4
+  _standoffs:
+    - name: standoff
+      extrude: 4
+  case:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _holes
+      operation: subtract
+    - what: case
+      name: xlBottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
 
 
