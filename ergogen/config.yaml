@@ -97,7 +97,7 @@ outlines:
         - ref: matrix_inner_top
           shift: [1.7px,0.4py]
         - ref: thumbs_space_cluster
-          shift: [-0.8px,0.py]
+          shift: [-0.8px,0.5py]
         - ref: thumbs_layer_cluster
           shift: [3px, -0.2py]
         - ref: thumbs_layer_cluster
@@ -121,8 +121,8 @@ outlines:
           shift: [-0.1dpx,0.6dpy]
         - ref: matrix_inner_top
           shift: [1.7dpx,0.4dpy]
-        - ref: matrix_inner_bottom
-          shift: [1.4dpx,-0.8dpy]
+        - ref: thumbs_space_cluster
+          shift: [-0.8dpx,0.5dpy]
         - ref: thumbs_layer_cluster
           shift: [2.9dpx, -0.2dpy]
         - ref: thumbs_layer_cluster
@@ -139,57 +139,67 @@ outlines:
     - operation: subtract
       name: keys
   mounting:
-        - what: circle
-          radius: screwSize
-          where:
-            ref: [matrix_pinky_top]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: screwSize
-          where:
-            ref: [matrix_inner_top]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: screwSize
-          where:
-            ref: [matrix_pinky_bottom]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: screwSize
-          where:
-            ref: [thumbs_layer_cluster]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: screwSize
-          where:
-            ref: [thumbs_extra_cluster]
-            shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, -0.3ky]
   standoff:
-        - what: circle
-          radius: standoffSize
-          where:
-            ref: [matrix_pinky_top]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: standoffSize
-          where:
-            ref: [matrix_inner_top]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: standoffSize
-          where:
-            ref: [matrix_pinky_bottom]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: standoffSize
-          where:
-            ref: [thumbs_layer_cluster]
-            shift: [0.5kx, -0.3ky]
-        - what: circle
-          radius: standoffSize
-          where:
-            ref: [thumbs_extra_cluster]
-            shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, -0.3ky]
 pcbs:
   juubo_left:
     outlines:
@@ -283,7 +293,7 @@ pcbs:
       holeTopInner:
         what: mountinghole
         where:
-          ref: [matrix_inner_top]
+          ref: [matrix_index_top]
           shift: [0.5kx, -0.3ky]
       holeBottomLeft:
         what: mountinghole
@@ -299,6 +309,11 @@ pcbs:
         what: mountinghole
         where:
           ref: [thumbs_extra_cluster]
+          shift: [0.5kx, -0.3ky]
+      holeInnerBottomRight:
+        what: mountinghole
+        where:
+          ref: [matrix_index_bottom]
           shift: [0.5kx, -0.3ky]
 cases:
   bottom:
