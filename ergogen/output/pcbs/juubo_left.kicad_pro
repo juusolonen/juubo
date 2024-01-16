@@ -231,7 +231,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P18"
+        "pattern": "P21"
       },
       {
         "netclass": "Default",
@@ -247,7 +247,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P19"
+        "pattern": "P20"
       },
       {
         "netclass": "Default",
@@ -263,7 +263,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P20"
+        "pattern": "P19"
       },
       {
         "netclass": "Default",
@@ -279,7 +279,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P21"
+        "pattern": "P18"
       },
       {
         "netclass": "Default",
@@ -295,7 +295,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P1"
+        "pattern": "P15"
       },
       {
         "netclass": "Default",
@@ -323,6 +323,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P10"
+      },
+      {
+        "netclass": "Default",
         "pattern": "P16"
       },
       {
@@ -331,11 +335,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P15"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P10"
+        "pattern": "P6"
       },
       {
         "netclass": "Default",
@@ -348,6 +348,10 @@
       {
         "netclass": "Default",
         "pattern": "VCC"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P1"
       },
       {
         "netclass": "Default",
@@ -371,7 +375,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P6"
+        "pattern": "B+"
       }
     ]
   },

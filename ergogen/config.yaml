@@ -22,31 +22,31 @@ points:
             mod:
               skip: true
           key:
-            column_net: P18
+            column_net: P21
         ring:
           rows.mod.skip: true
           key:
             stagger: 5
-            column_net: P19
+            column_net: P20
         middle:
           key:
             stagger: 2.5
-            column_net: P20
+            column_net: P19
         index:
           key:
             stagger: -2.5
-            column_net: P21
+            column_net: P18
         inner:
           key:
             stagger: -2.5
-            column_net: P1
+            column_net: P15
       rows:
         bottom:
-          row_net: P16
+          row_net: P10
         home:
-          row_net: P14
+          row_net: P16
         top:
-          row_net: P15
+          row_net: P14
 
     thumbs:
       key:
@@ -59,22 +59,22 @@ points:
         layer:
           key:
             splay: -15
-            column_net: P20
+            column_net: P19
         space:
           key:
             rotate: -115
             shift: [4,-2]
             width: 1.5kx
-            column_net: P21
+            column_net: P18
         extra:
           key:
             rotate: -120
             shift: [2,-12]
             width: 1.5kx
-            column_net: P1
+            column_net: P15
       rows:
         cluster:
-          row_net: P10
+          row_net: P6
 outlines:
   raw:
     - what: rectangle
@@ -243,6 +243,26 @@ pcbs:
           ref: matrix_inner_home
           shift: [px,0.5px]
           rotate: -90
+      onOff:
+        what: slider
+        params:
+          side: 'B'
+          from: RAW
+          to: B+
+        where:
+          ref: matrix_inner_top
+          shift: [px,0.4px]
+      jst:
+        what: jstph
+        params:
+          side: 'F'
+          pos: B+
+          neg: GND
+        where:
+          ref: matrix_inner_home
+          shift: [px,-0.55py]
+        adjust:
+          rotate: 180
       resistor:
         what: resistor
         where:
@@ -251,7 +271,7 @@ pcbs:
           PAD1: VCC
           PAD2: P3
         adjust:
-          shift: [1.2kx, -8]
+          shift: [1.75kx, -6]
           rotate: -90
       resistor2:
         what: resistor
@@ -261,7 +281,7 @@ pcbs:
           PAD1: VCC
           PAD2: P2
         adjust:
-          shift: [1.1kx, -8]
+          shift: [1.65kx, -6]
           rotate: -90
       reset:
         what: button
@@ -277,13 +297,13 @@ pcbs:
         what: trrs
         params:
           A: VCC
-          B: P2
-          C: P3
+          B: P3
+          C: P2
           D: GND
         where:
           ref: 
             - matrix_inner_bottom
-          shift: [1.7px, 0.3px]
+          shift: [1.7px, 0.25px]
           rotate: -90
       holeTopLeft:
         what: mountinghole
