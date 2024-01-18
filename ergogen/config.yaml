@@ -270,7 +270,7 @@ pcbs:
         params:
           side: 'B'
           PAD1: VCC
-          PAD2: P2
+          PAD2: P3
         adjust:
           shift: [1.75kx, -6]
           rotate: -90
@@ -281,7 +281,7 @@ pcbs:
         params:
           side: 'B'
           PAD1: VCC
-          PAD2: P3
+          PAD2: P2
         adjust:
           shift: [1.65kx, -6]
           rotate: -90
