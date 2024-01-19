@@ -153,22 +153,22 @@ outlines:
       radius: screwSize
       where:
         ref: [matrix_pinky_bottom]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.5kx, 0.7ky]
     - what: circle
       radius: screwSize
       where:
         ref: [thumbs_layer_cluster]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.7kx, 0.3ky]
     - what: circle
       radius: screwSize
       where:
         ref: [thumbs_extra_cluster]
-        shift: [0.5kx, -0.3ky]
+        shift: [0, -0.5ky]
     - what: circle
       radius: screwSize
       where:
         ref: [matrix_index_bottom]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.5kx, 0.5ky]
   standoff:
     - what: circle
       radius: standoffSize
@@ -184,22 +184,22 @@ outlines:
       radius: standoffSize
       where:
         ref: [matrix_pinky_bottom]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.5kx, 0.7ky]
     - what: circle
       radius: standoffSize
       where:
         ref: [thumbs_layer_cluster]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.7kx, 0.3ky]
     - what: circle
       radius: standoffSize
       where:
         ref: [thumbs_extra_cluster]
-        shift: [0.5kx, -0.3ky]
+        shift: [0, -0.5ky]
     - what: circle
       radius: standoffSize
       where:
         ref: [matrix_index_bottom]
-        shift: [0.5kx, -0.3ky]
+        shift: [0.5kx, 0.5ky]
 pcbs:
   juubo_left:
     outlines:
@@ -251,7 +251,7 @@ pcbs:
           to: B+
         where:
           ref: matrix_inner_top
-          shift: [px,0.4px]
+          shift: [px,0.39px]
       jst:
         what: jstph
         params:
@@ -321,22 +321,22 @@ pcbs:
         what: mountinghole
         where:
           ref: [matrix_pinky_bottom]
-          shift: [0.5kx, -0.3ky]
+          shift: [0.5kx, 0.7ky]
       holeThumbLeft:
         what: mountinghole
         where:
           ref: [thumbs_layer_cluster]
-          shift: [0.5kx, -0.3ky]
+          shift: [0.7kx, 0.3ky]
       holeThumbsRoght:
         what: mountinghole
         where:
           ref: [thumbs_extra_cluster]
-          shift: [0.5kx, -0.3ky]
+          shift: [0, -0.5ky]
       holeInnerBottomRight:
         what: mountinghole
         where:
           ref: [matrix_index_bottom]
-          shift: [0.5kx, -0.3ky]
+          shift: [0.5kx, 0.5ky]
 cases:
   bottom:
     - name: board
