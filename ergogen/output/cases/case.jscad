@@ -1,4 +1,4 @@
-function standoff_extrude_4_outline_fn(){
+function _standoff_extrude_4_outline_fn(){
     return CAG.circle({"center":[166.675,-85.475],"radius":2.5})
 .union(
     CAG.circle({"center":[206.8200116,-139.8551139],"radius":2.5})
@@ -14,7 +14,7 @@ function standoff_extrude_4_outline_fn(){
 }
 
 
-function mounting_extrude_4_outline_fn(){
+function _mounting_extrude_4_outline_fn(){
     return CAG.circle({"center":[166.675,-85.475],"radius":1.5})
 .union(
     CAG.circle({"center":[206.8200116,-139.8551139],"radius":1.5})
@@ -78,7 +78,7 @@ function _trrsWallOpeningFill_extrude_4_outline_fn(){
                     
 
                 // creating part 0 of case _standoffs
-                let _standoffs__part_0 = standoff_extrude_4_outline_fn();
+                let _standoffs__part_0 = _standoff_extrude_4_outline_fn();
 
                 // make sure that rotations are relative
                 let _standoffs__part_0_bounds = _standoffs__part_0.getBounds();
@@ -101,7 +101,7 @@ function _trrsWallOpeningFill_extrude_4_outline_fn(){
                     
 
                 // creating part 0 of case _holes
-                let _holes__part_0 = mounting_extrude_4_outline_fn();
+                let _holes__part_0 = _mounting_extrude_4_outline_fn();
 
                 // make sure that rotations are relative
                 let _holes__part_0_bounds = _holes__part_0.getBounds();

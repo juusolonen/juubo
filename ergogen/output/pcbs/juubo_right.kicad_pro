@@ -180,7 +180,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "juubo_left_no_res.kicad_pro",
+    "filename": "juubo_right.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -215,7 +215,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P9"
+        "pattern": "P19"
       },
       {
         "netclass": "Default",
@@ -223,59 +223,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P7"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P8"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P18"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "pinky_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "pinky_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "pinky_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P19"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "ring_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "ring_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "ring_top"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P20"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "middle_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "middle_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "middle_top"
       },
       {
         "netclass": "Default",
@@ -283,43 +231,95 @@
       },
       {
         "netclass": "Default",
-        "pattern": "index_bottom"
+        "pattern": "P4"
       },
       {
         "netclass": "Default",
-        "pattern": "index_home"
+        "pattern": "mirror_pinky_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "index_top"
+        "pattern": "mirror_pinky_home"
       },
       {
         "netclass": "Default",
-        "pattern": "P1"
+        "pattern": "mirror_pinky_top"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_bottom"
+        "pattern": "P5"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_home"
+        "pattern": "mirror_ring_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "inner_top"
+        "pattern": "mirror_ring_home"
       },
       {
         "netclass": "Default",
-        "pattern": "layer_cluster"
+        "pattern": "mirror_ring_top"
       },
       {
         "netclass": "Default",
-        "pattern": "space_cluster"
+        "pattern": "P6"
       },
       {
         "netclass": "Default",
-        "pattern": "extra_cluster"
+        "pattern": "mirror_middle_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_middle_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_middle_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P7"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_index_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_index_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_index_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P8"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_inner_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_inner_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_inner_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_layer_cluster"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_space_cluster"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "mirror_extra_cluster"
       },
       {
         "netclass": "Default",
@@ -351,6 +351,14 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P18"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P1"
+      },
+      {
+        "netclass": "Default",
         "pattern": "P0"
       },
       {
@@ -363,15 +371,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P4"
+        "pattern": "P9"
       },
       {
         "netclass": "Default",
-        "pattern": "P5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P6"
+        "pattern": "B+"
       }
     ]
   },

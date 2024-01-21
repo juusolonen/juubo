@@ -9,6 +9,9 @@ units:
   screwSize: 1.5
   standoffSize: 2.5
 points:
+  mirror: &mirror
+    ref: matrix_inner_top
+    distance: 7kx
   zones:
     matrix:
       anchor:
@@ -23,31 +26,38 @@ points:
               skip: true
           key:
             column_net: P21
+            mirror.column_net: P4
         ring:
           rows.mod.skip: true
           key:
             stagger: 5
             column_net: P20
+            mirror.column_net: P5
         middle:
           key:
             stagger: 2.5
             column_net: P19
+            mirror.column_net: P6
         index:
           key:
             stagger: -2.5
             column_net: P18
+            mirror.column_net: P7
         inner:
           key:
             stagger: -2.5
             column_net: P15
+            mirror.column_net: P8
       rows:
         bottom:
           row_net: P10
+          mirror.row_net: P16
         home:
           row_net: P16
+          mirror.row_net: P14
         top:
           row_net: P14
-
+          mirror.row_net: P15
     thumbs:
       key:
         padding: py
@@ -60,21 +70,25 @@ points:
           key:
             splay: -15
             column_net: P19
+            mirror.column_net: P6
         space:
           key:
             rotate: -115
             shift: [4,-2]
             width: 1.5kx
             column_net: P18
+            mirror.column_net: P7
         extra:
           key:
             rotate: -120
             shift: [2,-12]
             width: 1.5kx
             column_net: P15
+            mirror.column_net: P8
       rows:
         cluster:
           row_net: P6
+          mirror.row_net: P10
 outlines:
   raw:
     - what: rectangle
@@ -113,6 +127,31 @@ outlines:
         - ref: matrix_pinky_bottom
           shift: [-0.5px,-0.5py]
       fillet: 4
+  boardRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.5px,0.5py]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.5px,0.5py]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.1px,0.6py]
+        - ref: mirror_matrix_inner_top
+          shift: [1.7px,0.4py]
+        - ref: mirror_thumbs_space_cluster
+          shift: [-0.8px,0.5py]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [3px, -0.2py]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.25px,-1.4py]
+        - ref: mirror_thumbs_extra_cluster
+          shift: [1.3px,-2.3py]
+        - ref: mirror_matrix_index_bottom
+          shift: [0.1px,-0.7py]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
+      fillet: 4
   xlBoard:
     - what: polygon
       operation: stack
@@ -136,6 +175,31 @@ outlines:
         - ref: matrix_index_bottom
           shift: [0,-0.7dpy]
         - ref: matrix_pinky_bottom
+          shift: [-0.5dpx,-0.5dpy]
+      fillet: 4
+  xlBoardRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.5dpx,0.5dpy]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.5dpx,0.5dpy]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.1dpx,0.6dpy]
+        - ref: mirror_matrix_inner_top
+          shift: [1.7dpx,0.4dpy]
+        - ref: mirror_thumbs_space_cluster
+          shift: [-0.8dpx,0.5dpy]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.9dpx, -0.2dpy]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.1dpx,-1.4dpy]
+        - ref: mirror_thumbs_extra_cluster
+          shift: [1.3dpx,-2.15dpy]
+        - ref: mirror_matrix_index_bottom
+          shift: [0,-0.7dpy]
+        - ref: mirror_matrix_pinky_bottom
           shift: [-0.5dpx,-0.5dpy]
       fillet: 4
   _extraArea:
@@ -176,6 +240,32 @@ outlines:
         - shift: [1.7px+1.8, 0.25px]
         - rotate: 1
       size: [2.85, 5]
+  _wallOpeningRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+20]
+      size: [7.7, 4]
+  _wallOpeningFillUsbRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+19.3]
+        - rotate: -6
+      size: [7.7, 1.2]
+  _trrsWallOpeningRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [1.7px+2, 0.25px]
+      size: [5, 5]
+  _trrsWallOpeningFillRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [1.7px+1.8, 0.25px]
+        - rotate: 1
+      size: [2.85, 5]
   combo:
     - name: board
     - operation: subtract
@@ -188,7 +278,7 @@ outlines:
     - name: switchPlate
     - operation: subtract
       name: _extraArea
-  mounting:
+  _mounting:
     - what: circle
       radius: screwSize
       where:
@@ -219,7 +309,7 @@ outlines:
       where:
         ref: [matrix_index_bottom]
         shift: [0.5kx, 0.5ky]
-  standoff:
+  _standoff:
     - what: circle
       radius: standoffSize
       where:
@@ -249,6 +339,68 @@ outlines:
       radius: standoffSize
       where:
         ref: [matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+  _mountingRight:
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+  _standoffRight:
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_index_bottom]
         shift: [0.5kx, 0.5ky]
 pcbs:
   juubo_left:
@@ -270,7 +422,7 @@ pcbs:
           C: GND
       mx_hotswap:
         what: mx
-        where: true
+        where: /^(matrix|thumbs)_.*/ 
         params:
           keycaps: true
           reverse: false
@@ -279,7 +431,7 @@ pcbs:
           to: "{{colrow}}"
       diode:
         what: diode
-        where: true
+        where: /^(matrix|thumbs)_.*/ 
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -422,6 +574,142 @@ pcbs:
         where:
           ref: [matrix_index_bottom]
           shift: [0.5kx, 0.5ky]
+  juubo_right:
+    outlines:
+      main:
+        outline: boardRight
+    footprints:
+      rotary:
+        what: rotary
+        where: 
+          ref: 
+            - mirror_matrix_inner_bottom
+          shift: [px, -0.2px]
+        params:
+          from: P19
+          to: GND
+          A: P20
+          B: P21
+          C: GND
+      mx_hotswap:
+        what: mx
+        where: /^mirror_.*/ 
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^mirror_.*/ 
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [px,0.5px]
+          rotate: 90
+      onOff:
+        what: slider
+        params:
+          side: 'B'
+          from: RAW
+          to: B+
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [px,0.39px]
+      jst:
+        what: jstph
+        params:
+          side: 'F'
+          pos: B+
+          neg: GND
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [px,-0.55py]
+        adjust:
+          rotate: 180
+      resistor:
+        what: resistor
+        where:
+          ref: mirror_matrix_inner_home
+        params:
+          side: 'B'
+          PAD1: VCC
+          PAD2: P3
+        adjust:
+          shift: [1.75kx, -6]
+          rotate: 90
+      resistor2:
+        what: resistor
+        where:
+          ref: mirror_matrix_inner_home
+        params:
+          side: 'B'
+          PAD1: VCC
+          PAD2: P2
+        adjust:
+          shift: [1.65kx, -6]
+          rotate: 90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: 
+            - mirror_matrix_inner_bottom
+          shift: [1.55px, 1.8px]
+          rotate: 90
+      trrs:
+        what: trrs
+        params:
+          A: VCC
+          B: P2
+          C: P3
+          D: GND
+        where:
+          ref: 
+            - mirror_matrix_inner_bottom
+          shift: [1.7px, 0.4px+1.15]
+          rotate: -90
+      holeTopLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_top]
+          shift: [0.5kx, -0.3ky]
+      holeTopInner:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_top]
+          shift: [0.5kx, -0.3ky]
+      holeBottomLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_bottom]
+          shift: [0.5kx, 0.7ky]
+      holeThumbLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_thumbs_layer_cluster]
+          shift: [0.7kx, 0.3ky]
+      holeThumbsRoght:
+        what: mountinghole
+        where:
+          ref: [mirror_thumbs_extra_cluster]
+          shift: [0, -0.5ky]
+      holeInnerBottomRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_bottom]
+          shift: [0.5kx, 0.5ky]
 cases:
   bottom:
     - name: board
@@ -447,6 +735,30 @@ cases:
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
       extrude: 4
+  bottomRight:
+    - name: boardRight
+      extrude: 1
+  xlBottomRight:
+    - name: xlBoardRight
+      extrude: 1
+  _outerWallRight:
+    - name: xlBoardRight
+      extrude: 7.2
+  _innerWallRight:
+    - name: boardRight
+      extrude: 7.2
+  _openingRight:
+    - name: _wallOpeningRight
+      extrude: 7.2
+  _openingFillRight:
+    - name: _wallOpeningFillUsbRight
+      extrude: 2
+  _trrsOpeningRight:
+    - name: _trrsWallOpeningRight
+      extrude: 7.2
+  _trrsOpeningFillRight:
+    - name: _trrsWallOpeningFillRight
+      extrude: 4
   wall:
     - what: case
       name: _outerWall
@@ -466,11 +778,36 @@ cases:
     - what: case
       name: _trrsOpeningFill
       operation: add
+  wallRight:
+    - what: case
+      name: _outerWallRight
+      operation: add
+    - what: case
+      name: _innerWallRight
+      operation: subtract
+    - what: case
+      name: _openingRight
+      operation: subtract
+    - what: case
+      name: _openingFillRight
+      operation: add
+    - what: case
+      name: _trrsOpeningRight
+      operation: subtract
+    - what: case
+      name: _trrsOpeningFillRight
+      operation: add
   _holes:
-    - name: mounting
+    - name: _mounting
       extrude: 4
   _standoffs:
-    - name: standoff
+    - name: _standoff
+      extrude: 4
+  _holesRight:
+    - name: _mountingRight
+      extrude: 4
+  _standoffsRight:
+    - name: _standoffRight
       extrude: 4
   case:
     - what: case
@@ -484,6 +821,19 @@ cases:
       operation: add
     - what: case
       name: wall
+      operation: add
+  caseRight:
+    - what: case
+      name: _standoffsRight
+      operation: add
+    - what: case
+      name: _holesRight
+      operation: subtract
+    - what: case
+      name: xlBottomRight
+      operation: add
+    - what: case
+      name: wallRight
       operation: add
 
 
