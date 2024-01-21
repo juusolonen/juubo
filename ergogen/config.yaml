@@ -163,6 +163,19 @@ outlines:
         - shift: [px,0.5px+19.3]
         - rotate: -6
       size: [7.7, 1.2]
+  _trrsWallOpening:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [1.7px+2, 0.25px]
+      size: [5, 5]
+  _trrsWallOpeningFill:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [1.7px+1.8, 0.25px]
+        - rotate: 1
+      size: [2.85, 5]
   combo:
     - name: board
     - operation: subtract
@@ -428,6 +441,12 @@ cases:
   _openingFill:
     - name: _wallOpeningFillUsb
       extrude: 2
+  _trrsOpening:
+    - name: _trrsWallOpening
+      extrude: 7.2
+  _trrsOpeningFill:
+    - name: _trrsWallOpeningFill
+      extrude: 4
   wall:
     - what: case
       name: _outerWall
@@ -440,6 +459,12 @@ cases:
       operation: subtract
     - what: case
       name: _openingFill
+      operation: add
+    - what: case
+      name: _trrsOpening
+      operation: subtract
+    - what: case
+      name: _trrsOpeningFill
       operation: add
   _holes:
     - name: mounting
