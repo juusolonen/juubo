@@ -48,6 +48,18 @@ function board_extrude_7_2_outline_fn(){
 }
 
 
+function _wallOpening_extrude_7_2_outline_fn(){
+    return new CSG.Path2D([[195.4,-48.925],[203.1,-48.925]]).appendPoint([203.1,-44.925]).appendPoint([195.4,-44.925]).appendPoint([195.4,-48.925]).close().innerToCAG()
+.extrude({ offset: [0, 0, 7.2] });
+}
+
+
+function _wallOpeningFillUsb_extrude_2_outline_fn(){
+    return new CSG.Path2D([[195.3583736,-47.8192786],[203.0161922,-48.6241477]]).appendPoint([203.1416264,-47.4307214]).appendPoint([195.4838078,-46.6258523]).appendPoint([195.3583736,-47.8192786]).close().innerToCAG()
+.extrude({ offset: [0, 0, 2] });
+}
+
+
 
 
                 function _standoffs_case_fn() {
@@ -153,6 +165,38 @@ function board_extrude_7_2_outline_fn(){
                 result = result.subtract(wall__part_1);
                 
             
+
+                // creating part 2 of case wall
+                let wall__part_2 = _opening_case_fn();
+
+                // make sure that rotations are relative
+                let wall__part_2_bounds = wall__part_2.getBounds();
+                let wall__part_2_x = wall__part_2_bounds[0].x + (wall__part_2_bounds[1].x - wall__part_2_bounds[0].x) / 2
+                let wall__part_2_y = wall__part_2_bounds[0].y + (wall__part_2_bounds[1].y - wall__part_2_bounds[0].y) / 2
+                wall__part_2 = translate([-wall__part_2_x, -wall__part_2_y, 0], wall__part_2);
+                wall__part_2 = rotate([0,0,0], wall__part_2);
+                wall__part_2 = translate([wall__part_2_x, wall__part_2_y, 0], wall__part_2);
+
+                wall__part_2 = translate([0,0,0], wall__part_2);
+                result = result.subtract(wall__part_2);
+                
+            
+
+                // creating part 3 of case wall
+                let wall__part_3 = _openingFill_case_fn();
+
+                // make sure that rotations are relative
+                let wall__part_3_bounds = wall__part_3.getBounds();
+                let wall__part_3_x = wall__part_3_bounds[0].x + (wall__part_3_bounds[1].x - wall__part_3_bounds[0].x) / 2
+                let wall__part_3_y = wall__part_3_bounds[0].y + (wall__part_3_bounds[1].y - wall__part_3_bounds[0].y) / 2
+                wall__part_3 = translate([-wall__part_3_x, -wall__part_3_y, 0], wall__part_3);
+                wall__part_3 = rotate([0,0,0], wall__part_3);
+                wall__part_3 = translate([wall__part_3_x, wall__part_3_y, 0], wall__part_3);
+
+                wall__part_3 = translate([0,0,0], wall__part_3);
+                result = result.union(wall__part_3);
+                
+            
                     return result;
                 }
             
@@ -197,6 +241,52 @@ function board_extrude_7_2_outline_fn(){
 
                 _innerWall__part_0 = translate([0,0,0], _innerWall__part_0);
                 let result = _innerWall__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _opening_case_fn() {
+                    
+
+                // creating part 0 of case _opening
+                let _opening__part_0 = _wallOpening_extrude_7_2_outline_fn();
+
+                // make sure that rotations are relative
+                let _opening__part_0_bounds = _opening__part_0.getBounds();
+                let _opening__part_0_x = _opening__part_0_bounds[0].x + (_opening__part_0_bounds[1].x - _opening__part_0_bounds[0].x) / 2
+                let _opening__part_0_y = _opening__part_0_bounds[0].y + (_opening__part_0_bounds[1].y - _opening__part_0_bounds[0].y) / 2
+                _opening__part_0 = translate([-_opening__part_0_x, -_opening__part_0_y, 0], _opening__part_0);
+                _opening__part_0 = rotate([0,0,0], _opening__part_0);
+                _opening__part_0 = translate([_opening__part_0_x, _opening__part_0_y, 0], _opening__part_0);
+
+                _opening__part_0 = translate([0,0,0], _opening__part_0);
+                let result = _opening__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _openingFill_case_fn() {
+                    
+
+                // creating part 0 of case _openingFill
+                let _openingFill__part_0 = _wallOpeningFillUsb_extrude_2_outline_fn();
+
+                // make sure that rotations are relative
+                let _openingFill__part_0_bounds = _openingFill__part_0.getBounds();
+                let _openingFill__part_0_x = _openingFill__part_0_bounds[0].x + (_openingFill__part_0_bounds[1].x - _openingFill__part_0_bounds[0].x) / 2
+                let _openingFill__part_0_y = _openingFill__part_0_bounds[0].y + (_openingFill__part_0_bounds[1].y - _openingFill__part_0_bounds[0].y) / 2
+                _openingFill__part_0 = translate([-_openingFill__part_0_x, -_openingFill__part_0_y, 0], _openingFill__part_0);
+                _openingFill__part_0 = rotate([0,0,0], _openingFill__part_0);
+                _openingFill__part_0 = translate([_openingFill__part_0_x, _openingFill__part_0_y, 0], _openingFill__part_0);
+
+                _openingFill__part_0 = translate([0,0,0], _openingFill__part_0);
+                let result = _openingFill__part_0;
                 
             
                     return result;

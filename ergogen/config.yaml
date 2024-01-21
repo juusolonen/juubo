@@ -138,18 +138,31 @@ outlines:
         - ref: matrix_pinky_bottom
           shift: [-0.5dpx,-0.5dpy]
       fillet: 4
-  extraArea:
+  _extraArea:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_top
           shift: [0.53kx,0.6dpy]
         - ref: matrix_inner_bottom
-          shift: [0.53kx,-0.4kx]
+          shift: [0.53kx,-0.5kx]
         - ref: thumbs_extra_cluster
           shift: [-1dpx,dpy]
         - ref: matrix_inner_top
           shift: [2.5kx,0.4dpy]
+  _wallOpening:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+20]
+      size: [7.7, 4]
+  _wallOpeningFillUsb:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+19.3]
+        - rotate: -6
+      size: [7.7, 1.2]
   combo:
     - name: board
     - operation: subtract
@@ -158,10 +171,10 @@ outlines:
     - name: board
     - operation: subtract
       name: switches
-  finalMount:
+  _finalMount:
     - name: switchPlate
     - operation: subtract
-      name: extraArea
+      name: _extraArea
   mounting:
     - what: circle
       radius: screwSize
@@ -364,7 +377,7 @@ pcbs:
   juubo_left_plate:
     outlines:
       main:
-        outline: finalMount
+        outline: _finalMount
     footprints:
       holeTopLeft:
         what: mountinghole
@@ -409,6 +422,12 @@ cases:
   _innerWall:
     - name: board
       extrude: 7.2
+  _opening:
+    - name: _wallOpening
+      extrude: 7.2
+  _openingFill:
+    - name: _wallOpeningFillUsb
+      extrude: 2
   wall:
     - what: case
       name: _outerWall
@@ -416,6 +435,12 @@ cases:
     - what: case
       name: _innerWall
       operation: subtract
+    - what: case
+      name: _opening
+      operation: subtract
+    - what: case
+      name: _openingFill
+      operation: add
   _holes:
     - name: mounting
       extrude: 4
