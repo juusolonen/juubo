@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 3.2,
+          "height": 4.4,
+          "width": 4.4
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -180,7 +180,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "juubo_left.kicad_pro",
+    "filename": "juubo_left_plate.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -212,170 +212,6 @@
       {
         "netclass": "Default",
         "pattern": ""
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P19"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "GND"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P20"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P21"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_pinky_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_pinky_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_pinky_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_ring_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_ring_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_ring_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P6"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_middle_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_middle_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_middle_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P7"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_index_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_index_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_index_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P8"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_inner_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_inner_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_inner_top"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_layer_cluster"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_space_cluster"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_extra_cluster"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P16"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P14"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P15"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P10"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "RAW"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "RST"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "VCC"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P18"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P0"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P9"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "B+"
       }
     ]
   },
@@ -384,7 +220,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "specctra_dsn": "juubo_left.dsn",
+      "specctra_dsn": "",
       "step": "",
       "vrml": ""
     },
