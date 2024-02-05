@@ -711,9 +711,18 @@ pcbs:
           ref: [mirror_matrix_index_bottom]
           shift: [0.5kx, 0.5ky]
 cases:
+  _extraArea:
+    - name: _extraArea
+      extrude: 1.6
   bottom:
     - name: board
       extrude: 1
+  _switches:
+    - name: switches
+      extrude: 1.6
+  _switchPlate:
+    - name: board
+      extrude: 1.6
   xlBottom:
     - name: xlBoard
       extrude: 1
@@ -835,5 +844,16 @@ cases:
     - what: case
       name: wallRight
       operation: add
+  switchPlate:
+    - what: case
+      name: _switchPlate
+      operation: add
+    - what: case
+      name: _switches
+      operation: subtract
+    - what: case
+      name: _extraArea
+      operation: subtract
+
 
 
