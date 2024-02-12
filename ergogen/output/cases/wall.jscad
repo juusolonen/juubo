@@ -28,9 +28,9 @@ function _trrsWallOpening_extrude_7_2_outline_fn(){
 }
 
 
-function _trrsWallOpeningFill_extrude_4_outline_fn(){
+function _trrsWallOpeningFill_extrude_5_6_outline_fn(){
     return new CSG.Path2D([[215.8038481,-75.2119889],[218.653414,-75.1622496]]).appendPoint([218.5661519,-70.1630111]).appendPoint([215.716586,-70.2127504]).appendPoint([215.8038481,-75.2119889]).close().innerToCAG()
-.extrude({ offset: [0, 0, 4] });
+.extrude({ offset: [0, 0, 5.6] });
 }
 
 
@@ -155,7 +155,7 @@ function _trrsWallOpeningFill_extrude_4_outline_fn(){
                     
 
                 // creating part 0 of case _trrsOpeningFill
-                let _trrsOpeningFill__part_0 = _trrsWallOpeningFill_extrude_4_outline_fn();
+                let _trrsOpeningFill__part_0 = _trrsWallOpeningFill_extrude_5_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _trrsOpeningFill__part_0_bounds = _trrsOpeningFill__part_0.getBounds();

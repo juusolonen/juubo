@@ -4,6 +4,22 @@ function board_extrude_1_6_outline_fn(){
 }
 
 
+function _plateHole_extrude_4_outline_fn(){
+    return CAG.circle({"center":[166.675,-85.475],"radius":3.2})
+.union(
+    CAG.circle({"center":[206.8200116,-139.8551139],"radius":3.2})
+).union(
+    CAG.circle({"center":[184.5597717,-120.4810859],"radius":3.2})
+).union(
+    CAG.circle({"center":[109.525,-86.665],"radius":3.2})
+).union(
+    CAG.circle({"center":[166.675,-62.615],"radius":3.2})
+).union(
+    CAG.circle({"center":[109.525,-67.615],"radius":3.2})
+).extrude({ offset: [0, 0, 4] });
+}
+
+
 function switches_extrude_1_6_outline_fn(){
     return new CSG.Path2D([[282.0942912,-146.590306],[272.1947963,-136.6908111]]).appendPoint([262.2953014,-146.590306]).appendPoint([272.1947963,-156.4898009]).appendPoint([282.0942912,-146.590306]).close().innerToCAG()
 .union(
@@ -80,9 +96,33 @@ function switches_extrude_1_6_outline_fn(){
 }
 
 
-function _extraArea_extrude_1_6_outline_fn(){
-    return new CSG.Path2D([[223.825,-49.38],[186.2965,-44.37]]).appendPoint([186.2965,-107.025]).appendPoint([248.9812534,-146.590306]).appendPoint([223.825,-49.38]).close().innerToCAG()
+function _rotary_extrude_1_6_outline_fn(){
+    return new CSG.Path2D([[192.25,-109.11],[206.25,-109.11]]).appendPoint([206.25,-95.11]).appendPoint([192.25,-95.11]).appendPoint([192.25,-109.11]).close().innerToCAG()
 .extrude({ offset: [0, 0, 1.6] });
+}
+
+
+function _XLextraArea_extrude_1_6_outline_fn(){
+    return new CSG.Path2D([[216.705,-49.381],[185.7965,-46.074]]).appendPoint([185.7965,-94.3425]).appendPoint([217.005,-94.3425]).appendPoint([216.705,-49.381]).close().innerToCAG()
+.extrude({ offset: [0, 0, 1.6] });
+}
+
+
+function _extraArea_extrude_1_outline_fn(){
+    return new CSG.Path2D([[215.205,-50.381],[186.7965,-47.174]]).appendPoint([186.7965,-94.0425]).appendPoint([216.005,-94.0425]).appendPoint([215.205,-50.381]).close().innerToCAG()
+.extrude({ offset: [0, 0, 1] });
+}
+
+
+function _XLextraArea_extrude_9_6_outline_fn(){
+    return new CSG.Path2D([[216.705,-49.381],[185.7965,-46.074]]).appendPoint([185.7965,-94.3425]).appendPoint([217.005,-94.3425]).appendPoint([216.705,-49.381]).close().innerToCAG()
+.extrude({ offset: [0, 0, 9.6] });
+}
+
+
+function _extraArea_extrude_9_6_outline_fn(){
+    return new CSG.Path2D([[215.205,-50.381],[186.7965,-47.174]]).appendPoint([186.7965,-94.0425]).appendPoint([216.005,-94.0425]).appendPoint([215.205,-50.381]).close().innerToCAG()
+.extrude({ offset: [0, 0, 9.6] });
 }
 
 
@@ -104,6 +144,29 @@ function _extraArea_extrude_1_6_outline_fn(){
 
                 _switchPlate__part_0 = translate([0,0,0], _switchPlate__part_0);
                 let result = _switchPlate__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _plateHoles_case_fn() {
+                    
+
+                // creating part 0 of case _plateHoles
+                let _plateHoles__part_0 = _plateHole_extrude_4_outline_fn();
+
+                // make sure that rotations are relative
+                let _plateHoles__part_0_bounds = _plateHoles__part_0.getBounds();
+                let _plateHoles__part_0_x = _plateHoles__part_0_bounds[0].x + (_plateHoles__part_0_bounds[1].x - _plateHoles__part_0_bounds[0].x) / 2
+                let _plateHoles__part_0_y = _plateHoles__part_0_bounds[0].y + (_plateHoles__part_0_bounds[1].y - _plateHoles__part_0_bounds[0].y) / 2
+                _plateHoles__part_0 = translate([-_plateHoles__part_0_x, -_plateHoles__part_0_y, 0], _plateHoles__part_0);
+                _plateHoles__part_0 = rotate([0,0,0], _plateHoles__part_0);
+                _plateHoles__part_0 = translate([_plateHoles__part_0_x, _plateHoles__part_0_y, 0], _plateHoles__part_0);
+
+                _plateHoles__part_0 = translate([0,0,0], _plateHoles__part_0);
+                let result = _plateHoles__part_0;
                 
             
                     return result;
@@ -134,22 +197,153 @@ function _extraArea_extrude_1_6_outline_fn(){
             
             
 
-                function _extraArea_case_fn() {
+                function _rotary_case_fn() {
                     
 
-                // creating part 0 of case _extraArea
-                let _extraArea__part_0 = _extraArea_extrude_1_6_outline_fn();
+                // creating part 0 of case _rotary
+                let _rotary__part_0 = _rotary_extrude_1_6_outline_fn();
 
                 // make sure that rotations are relative
-                let _extraArea__part_0_bounds = _extraArea__part_0.getBounds();
-                let _extraArea__part_0_x = _extraArea__part_0_bounds[0].x + (_extraArea__part_0_bounds[1].x - _extraArea__part_0_bounds[0].x) / 2
-                let _extraArea__part_0_y = _extraArea__part_0_bounds[0].y + (_extraArea__part_0_bounds[1].y - _extraArea__part_0_bounds[0].y) / 2
-                _extraArea__part_0 = translate([-_extraArea__part_0_x, -_extraArea__part_0_y, 0], _extraArea__part_0);
-                _extraArea__part_0 = rotate([0,0,0], _extraArea__part_0);
-                _extraArea__part_0 = translate([_extraArea__part_0_x, _extraArea__part_0_y, 0], _extraArea__part_0);
+                let _rotary__part_0_bounds = _rotary__part_0.getBounds();
+                let _rotary__part_0_x = _rotary__part_0_bounds[0].x + (_rotary__part_0_bounds[1].x - _rotary__part_0_bounds[0].x) / 2
+                let _rotary__part_0_y = _rotary__part_0_bounds[0].y + (_rotary__part_0_bounds[1].y - _rotary__part_0_bounds[0].y) / 2
+                _rotary__part_0 = translate([-_rotary__part_0_x, -_rotary__part_0_y, 0], _rotary__part_0);
+                _rotary__part_0 = rotate([0,0,0], _rotary__part_0);
+                _rotary__part_0 = translate([_rotary__part_0_x, _rotary__part_0_y, 0], _rotary__part_0);
 
-                _extraArea__part_0 = translate([0,0,0], _extraArea__part_0);
-                let result = _extraArea__part_0;
+                _rotary__part_0 = translate([0,0,0], _rotary__part_0);
+                let result = _rotary__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _XLextraArea_case_fn() {
+                    
+
+                // creating part 0 of case _XLextraArea
+                let _XLextraArea__part_0 = _XLextraArea_extrude_1_6_outline_fn();
+
+                // make sure that rotations are relative
+                let _XLextraArea__part_0_bounds = _XLextraArea__part_0.getBounds();
+                let _XLextraArea__part_0_x = _XLextraArea__part_0_bounds[0].x + (_XLextraArea__part_0_bounds[1].x - _XLextraArea__part_0_bounds[0].x) / 2
+                let _XLextraArea__part_0_y = _XLextraArea__part_0_bounds[0].y + (_XLextraArea__part_0_bounds[1].y - _XLextraArea__part_0_bounds[0].y) / 2
+                _XLextraArea__part_0 = translate([-_XLextraArea__part_0_x, -_XLextraArea__part_0_y, 0], _XLextraArea__part_0);
+                _XLextraArea__part_0 = rotate([0,0,0], _XLextraArea__part_0);
+                _XLextraArea__part_0 = translate([_XLextraArea__part_0_x, _XLextraArea__part_0_y, 0], _XLextraArea__part_0);
+
+                _XLextraArea__part_0 = translate([0,0,0], _XLextraArea__part_0);
+                let result = _XLextraArea__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _extraAreaUp_case_fn() {
+                    
+
+                // creating part 0 of case _extraAreaUp
+                let _extraAreaUp__part_0 = _extraArea_extrude_1_outline_fn();
+
+                // make sure that rotations are relative
+                let _extraAreaUp__part_0_bounds = _extraAreaUp__part_0.getBounds();
+                let _extraAreaUp__part_0_x = _extraAreaUp__part_0_bounds[0].x + (_extraAreaUp__part_0_bounds[1].x - _extraAreaUp__part_0_bounds[0].x) / 2
+                let _extraAreaUp__part_0_y = _extraAreaUp__part_0_bounds[0].y + (_extraAreaUp__part_0_bounds[1].y - _extraAreaUp__part_0_bounds[0].y) / 2
+                _extraAreaUp__part_0 = translate([-_extraAreaUp__part_0_x, -_extraAreaUp__part_0_y, 0], _extraAreaUp__part_0);
+                _extraAreaUp__part_0 = rotate([0,0,0], _extraAreaUp__part_0);
+                _extraAreaUp__part_0 = translate([_extraAreaUp__part_0_x, _extraAreaUp__part_0_y, 0], _extraAreaUp__part_0);
+
+                _extraAreaUp__part_0 = translate([0,0,8.6], _extraAreaUp__part_0);
+                let result = _extraAreaUp__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function stand_case_fn() {
+                    
+
+                // creating part 0 of case stand
+                let stand__part_0 = _outerStand_case_fn();
+
+                // make sure that rotations are relative
+                let stand__part_0_bounds = stand__part_0.getBounds();
+                let stand__part_0_x = stand__part_0_bounds[0].x + (stand__part_0_bounds[1].x - stand__part_0_bounds[0].x) / 2
+                let stand__part_0_y = stand__part_0_bounds[0].y + (stand__part_0_bounds[1].y - stand__part_0_bounds[0].y) / 2
+                stand__part_0 = translate([-stand__part_0_x, -stand__part_0_y, 0], stand__part_0);
+                stand__part_0 = rotate([0,0,0], stand__part_0);
+                stand__part_0 = translate([stand__part_0_x, stand__part_0_y, 0], stand__part_0);
+
+                stand__part_0 = translate([0,0,0], stand__part_0);
+                let result = stand__part_0;
+                
+            
+
+                // creating part 1 of case stand
+                let stand__part_1 = _innerStand_case_fn();
+
+                // make sure that rotations are relative
+                let stand__part_1_bounds = stand__part_1.getBounds();
+                let stand__part_1_x = stand__part_1_bounds[0].x + (stand__part_1_bounds[1].x - stand__part_1_bounds[0].x) / 2
+                let stand__part_1_y = stand__part_1_bounds[0].y + (stand__part_1_bounds[1].y - stand__part_1_bounds[0].y) / 2
+                stand__part_1 = translate([-stand__part_1_x, -stand__part_1_y, 0], stand__part_1);
+                stand__part_1 = rotate([0,0,0], stand__part_1);
+                stand__part_1 = translate([stand__part_1_x, stand__part_1_y, 0], stand__part_1);
+
+                stand__part_1 = translate([0,0,0], stand__part_1);
+                result = result.subtract(stand__part_1);
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _outerStand_case_fn() {
+                    
+
+                // creating part 0 of case _outerStand
+                let _outerStand__part_0 = _XLextraArea_extrude_9_6_outline_fn();
+
+                // make sure that rotations are relative
+                let _outerStand__part_0_bounds = _outerStand__part_0.getBounds();
+                let _outerStand__part_0_x = _outerStand__part_0_bounds[0].x + (_outerStand__part_0_bounds[1].x - _outerStand__part_0_bounds[0].x) / 2
+                let _outerStand__part_0_y = _outerStand__part_0_bounds[0].y + (_outerStand__part_0_bounds[1].y - _outerStand__part_0_bounds[0].y) / 2
+                _outerStand__part_0 = translate([-_outerStand__part_0_x, -_outerStand__part_0_y, 0], _outerStand__part_0);
+                _outerStand__part_0 = rotate([0,0,0], _outerStand__part_0);
+                _outerStand__part_0 = translate([_outerStand__part_0_x, _outerStand__part_0_y, 0], _outerStand__part_0);
+
+                _outerStand__part_0 = translate([0,0,0], _outerStand__part_0);
+                let result = _outerStand__part_0;
+                
+            
+                    return result;
+                }
+            
+            
+
+                function _innerStand_case_fn() {
+                    
+
+                // creating part 0 of case _innerStand
+                let _innerStand__part_0 = _extraArea_extrude_9_6_outline_fn();
+
+                // make sure that rotations are relative
+                let _innerStand__part_0_bounds = _innerStand__part_0.getBounds();
+                let _innerStand__part_0_x = _innerStand__part_0_bounds[0].x + (_innerStand__part_0_bounds[1].x - _innerStand__part_0_bounds[0].x) / 2
+                let _innerStand__part_0_y = _innerStand__part_0_bounds[0].y + (_innerStand__part_0_bounds[1].y - _innerStand__part_0_bounds[0].y) / 2
+                _innerStand__part_0 = translate([-_innerStand__part_0_x, -_innerStand__part_0_y, 0], _innerStand__part_0);
+                _innerStand__part_0 = rotate([0,0,0], _innerStand__part_0);
+                _innerStand__part_0 = translate([_innerStand__part_0_x, _innerStand__part_0_y, 0], _innerStand__part_0);
+
+                _innerStand__part_0 = translate([0,0,0], _innerStand__part_0);
+                let result = _innerStand__part_0;
                 
             
                     return result;
@@ -177,7 +371,7 @@ function _extraArea_extrude_1_6_outline_fn(){
             
 
                 // creating part 1 of case switchPlate
-                let switchPlate__part_1 = _switches_case_fn();
+                let switchPlate__part_1 = _plateHoles_case_fn();
 
                 // make sure that rotations are relative
                 let switchPlate__part_1_bounds = switchPlate__part_1.getBounds();
@@ -193,7 +387,7 @@ function _extraArea_extrude_1_6_outline_fn(){
             
 
                 // creating part 2 of case switchPlate
-                let switchPlate__part_2 = _extraArea_case_fn();
+                let switchPlate__part_2 = _switches_case_fn();
 
                 // make sure that rotations are relative
                 let switchPlate__part_2_bounds = switchPlate__part_2.getBounds();
@@ -205,6 +399,70 @@ function _extraArea_extrude_1_6_outline_fn(){
 
                 switchPlate__part_2 = translate([0,0,0], switchPlate__part_2);
                 result = result.subtract(switchPlate__part_2);
+                
+            
+
+                // creating part 3 of case switchPlate
+                let switchPlate__part_3 = _rotary_case_fn();
+
+                // make sure that rotations are relative
+                let switchPlate__part_3_bounds = switchPlate__part_3.getBounds();
+                let switchPlate__part_3_x = switchPlate__part_3_bounds[0].x + (switchPlate__part_3_bounds[1].x - switchPlate__part_3_bounds[0].x) / 2
+                let switchPlate__part_3_y = switchPlate__part_3_bounds[0].y + (switchPlate__part_3_bounds[1].y - switchPlate__part_3_bounds[0].y) / 2
+                switchPlate__part_3 = translate([-switchPlate__part_3_x, -switchPlate__part_3_y, 0], switchPlate__part_3);
+                switchPlate__part_3 = rotate([0,0,0], switchPlate__part_3);
+                switchPlate__part_3 = translate([switchPlate__part_3_x, switchPlate__part_3_y, 0], switchPlate__part_3);
+
+                switchPlate__part_3 = translate([0,0,0], switchPlate__part_3);
+                result = result.subtract(switchPlate__part_3);
+                
+            
+
+                // creating part 4 of case switchPlate
+                let switchPlate__part_4 = _XLextraArea_case_fn();
+
+                // make sure that rotations are relative
+                let switchPlate__part_4_bounds = switchPlate__part_4.getBounds();
+                let switchPlate__part_4_x = switchPlate__part_4_bounds[0].x + (switchPlate__part_4_bounds[1].x - switchPlate__part_4_bounds[0].x) / 2
+                let switchPlate__part_4_y = switchPlate__part_4_bounds[0].y + (switchPlate__part_4_bounds[1].y - switchPlate__part_4_bounds[0].y) / 2
+                switchPlate__part_4 = translate([-switchPlate__part_4_x, -switchPlate__part_4_y, 0], switchPlate__part_4);
+                switchPlate__part_4 = rotate([0,0,0], switchPlate__part_4);
+                switchPlate__part_4 = translate([switchPlate__part_4_x, switchPlate__part_4_y, 0], switchPlate__part_4);
+
+                switchPlate__part_4 = translate([0,0,0], switchPlate__part_4);
+                result = result.subtract(switchPlate__part_4);
+                
+            
+
+                // creating part 5 of case switchPlate
+                let switchPlate__part_5 = _extraAreaUp_case_fn();
+
+                // make sure that rotations are relative
+                let switchPlate__part_5_bounds = switchPlate__part_5.getBounds();
+                let switchPlate__part_5_x = switchPlate__part_5_bounds[0].x + (switchPlate__part_5_bounds[1].x - switchPlate__part_5_bounds[0].x) / 2
+                let switchPlate__part_5_y = switchPlate__part_5_bounds[0].y + (switchPlate__part_5_bounds[1].y - switchPlate__part_5_bounds[0].y) / 2
+                switchPlate__part_5 = translate([-switchPlate__part_5_x, -switchPlate__part_5_y, 0], switchPlate__part_5);
+                switchPlate__part_5 = rotate([0,0,0], switchPlate__part_5);
+                switchPlate__part_5 = translate([switchPlate__part_5_x, switchPlate__part_5_y, 0], switchPlate__part_5);
+
+                switchPlate__part_5 = translate([-1,-0.5,0], switchPlate__part_5);
+                result = result.union(switchPlate__part_5);
+                
+            
+
+                // creating part 6 of case switchPlate
+                let switchPlate__part_6 = stand_case_fn();
+
+                // make sure that rotations are relative
+                let switchPlate__part_6_bounds = switchPlate__part_6.getBounds();
+                let switchPlate__part_6_x = switchPlate__part_6_bounds[0].x + (switchPlate__part_6_bounds[1].x - switchPlate__part_6_bounds[0].x) / 2
+                let switchPlate__part_6_y = switchPlate__part_6_bounds[0].y + (switchPlate__part_6_bounds[1].y - switchPlate__part_6_bounds[0].y) / 2
+                switchPlate__part_6 = translate([-switchPlate__part_6_x, -switchPlate__part_6_y, 0], switchPlate__part_6);
+                switchPlate__part_6 = rotate([0,0,0], switchPlate__part_6);
+                switchPlate__part_6 = translate([switchPlate__part_6_x, switchPlate__part_6_y, 0], switchPlate__part_6);
+
+                switchPlate__part_6 = translate([-1,-0.5,0], switchPlate__part_6);
+                result = result.union(switchPlate__part_6);
                 
             
                     return result;

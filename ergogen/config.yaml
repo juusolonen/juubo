@@ -8,6 +8,7 @@ units:
 # M2 Screw Inserts
   screwSize: 1.5
   standoffSize: 2.5
+  plateHole: 3.2
 points:
   mirror: &mirror
     ref: matrix_inner_top
@@ -207,13 +208,25 @@ outlines:
       operation: stack
       points:
         - ref: matrix_inner_top
-          shift: [0.53kx,0.6dpy]
+          shift: [0.53kx+0.5,0.52dpy-0.8]
         - ref: matrix_inner_bottom
-          shift: [0.53kx,-0.5kx]
-        - ref: thumbs_extra_cluster
-          shift: [-1dpx,dpy]
+          shift: [0.53kx+0.5,0.15ky+0.6]
+        - ref: matrix_inner_bottom
+          shift: [2.1kx-0.2,0.15ky+0.6]
         - ref: matrix_inner_top
-          shift: [2.5kx,0.4dpy]
+          shift: [2.1kx-1,0.38dpy-0.5]
+  _XLextraArea:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.53kx-0.5,0.52dpy+0.3]
+        - ref: matrix_inner_bottom
+          shift: [0.53kx-0.5,0.15ky+0.3]
+        - ref: matrix_inner_bottom
+          shift: [2.1kx+0.8,0.15ky+0.3]
+        - ref: matrix_inner_top
+          shift: [2.1kx+0.5,0.38dpy+0.5]
   _wallOpening:
     - what: rectangle
       where: matrix_inner_home
@@ -266,6 +279,13 @@ outlines:
         - shift: [1.7px+1.8, 0.25px]
         - rotate: 1
       size: [2.85, 5]
+  _rotary:
+    - what: rectangle
+      where: matrix_inner_bottom
+      adjust:
+      - shift: [px, -0.2px]
+      size: [14, 14]
+
   combo:
     - name: board
     - operation: subtract
@@ -337,6 +357,37 @@ outlines:
         shift: [0, -0.5ky]
     - what: circle
       radius: standoffSize
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+  _plateHole:
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: plateHole
       where:
         ref: [matrix_index_bottom]
         shift: [0.5kx, 0.5ky]
@@ -714,6 +765,22 @@ cases:
   _extraArea:
     - name: _extraArea
       extrude: 1.6
+  _XLextraArea:
+    - name: _XLextraArea
+      extrude: 1.6
+  _extraAreaUp:
+    - name: _extraArea
+      shift: [0, 0, 8.6]
+      extrude: 1
+  _outerStand:
+    - name: _XLextraArea
+      extrude: 9.6
+  _innerStand:
+    - name: _extraArea
+      extrude: 9.6
+  _rotary:
+    - name: _rotary
+      extrude: 1.6
   bottom:
     - name: board
       extrude: 1
@@ -743,7 +810,7 @@ cases:
       extrude: 7.2
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
-      extrude: 4
+      extrude: 5.6
   bottomRight:
     - name: boardRight
       extrude: 1
@@ -767,7 +834,7 @@ cases:
       extrude: 7.2
   _trrsOpeningFillRight:
     - name: _trrsWallOpeningFillRight
-      extrude: 4
+      extrude: 5.6
   wall:
     - what: case
       name: _outerWall
@@ -787,6 +854,13 @@ cases:
     - what: case
       name: _trrsOpeningFill
       operation: add
+  stand:
+    - what: case
+      name: _outerStand
+      operation: add
+    - what: case
+      name: _innerStand
+      operation: subtract
   wallRight:
     - what: case
       name: _outerWallRight
@@ -808,6 +882,9 @@ cases:
       operation: add
   _holes:
     - name: _mounting
+      extrude: 4
+  _plateHoles:
+    - name: _plateHole
       extrude: 4
   _standoffs:
     - name: _standoff
@@ -844,16 +921,28 @@ cases:
     - what: case
       name: wallRight
       operation: add
-  switchPlate:
+  switchPlateWithStandLeft:
     - what: case
       name: _switchPlate
       operation: add
     - what: case
+      name: _plateHoles
+      operation: subtract
+    - what: case
       name: _switches
       operation: subtract
     - what: case
-      name: _extraArea
+      name: _rotary
       operation: subtract
-
-
+    - what: case
+      name: _XLextraArea
+      operation: subtract
+    - what: case
+      name: _extraAreaUp
+      operation: add
+      shift: [-1, -0.5, 0]
+    - what: case
+      name: stand
+      operation: add
+      shift: [-1, -0.5, 0]
 
