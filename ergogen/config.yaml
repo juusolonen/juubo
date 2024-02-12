@@ -232,7 +232,13 @@ outlines:
       where: matrix_inner_home
       adjust:
         - shift: [px,0.5px+20]
-      size: [7.7, 4]
+      size: [7.7, 8]
+  _resetOpening:
+    - what: rectangle
+      where: matrix_inner_bottom
+      adjust:
+          shift: [1.6px, 1.8px]
+      size: [8,8]
   _wallOpeningFillUsb:
     - what: rectangle
       where: matrix_inner_home
@@ -244,15 +250,21 @@ outlines:
     - what: rectangle
       where: matrix_inner_home
       adjust:
-        - shift: [1.7px+2, 0.25px]
+        - shift: [1.7px+2, -0.5px]
       size: [5, 5]
+  _trrsWallOpeningForStand:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [1.7px+2, -0.5px]
+      size: [10, 5]
   _trrsWallOpeningFill:
     - what: rectangle
       where: matrix_inner_home
       adjust:
-        - shift: [1.7px+1.8, 0.25px]
+        - shift: [1.7px+1.8, -0.5px]
         - rotate: 1
-      size: [2.85, 5]
+      size: [2.45, 5]
   _wallOpeningRight:
     - what: rectangle
       where: mirror_matrix_inner_home
@@ -802,15 +814,18 @@ cases:
   _opening:
     - name: _wallOpening
       extrude: 7.2
-  _openingFill:
-    - name: _wallOpeningFillUsb
-      extrude: 2
+  _resetOpening:
+    - name: _resetOpening
+      extrude: 8
   _trrsOpening:
     - name: _trrsWallOpening
       extrude: 7.2
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
       extrude: 5.6
+  _trrsStandOpening:
+    - name: _trrsWallOpeningForStand
+      extrude: 4
   bottomRight:
     - name: boardRight
       extrude: 1
@@ -842,12 +857,12 @@ cases:
     - what: case
       name: _innerWall
       operation: subtract
-    - what: case
-      name: _opening
-      operation: subtract
-    - what: case
-      name: _openingFill
-      operation: add
+   # - what: case
+    #  name: _opening
+     # operation: subtract
+    #- what: case
+     # name: _openingFill
+     # operation: add
     - what: case
       name: _trrsOpening
       operation: subtract
@@ -945,4 +960,15 @@ cases:
       name: stand
       operation: add
       shift: [-1, -0.5, 0]
+    - what: case
+      name: _trrsStandOpening
+      operation: subtract
+      shift: [2, 0, 0]
+    - what: case
+      name: _opening
+      operation: subtract
+    - what: case
+      name: _resetOpening
+      operation: subtract
+
 
