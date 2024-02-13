@@ -232,7 +232,7 @@ outlines:
       where: matrix_inner_home
       adjust:
         - shift: [px,0.5px+20]
-      size: [7.7, 8]
+      size: [10, 8]
   _resetOpening:
     - what: rectangle
       where: matrix_inner_bottom
@@ -251,20 +251,20 @@ outlines:
       where: matrix_inner_home
       adjust:
         - shift: [1.7px+2, -0.5px]
-      size: [5, 5]
+      size: [5, 6]
   _trrsWallOpeningForStand:
     - what: rectangle
       where: matrix_inner_home
       adjust:
         - shift: [1.7px+2, -0.5px]
-      size: [10, 5]
+      size: [10, 6]
   _trrsWallOpeningFill:
     - what: rectangle
       where: matrix_inner_home
       adjust:
         - shift: [1.7px+1.8, -0.5px]
         - rotate: 1
-      size: [2.45, 5]
+      size: [2.45, 6]
   _wallOpeningRight:
     - what: rectangle
       where: mirror_matrix_inner_home

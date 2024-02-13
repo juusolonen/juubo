@@ -49,13 +49,13 @@ function board_extrude_7_2_outline_fn(){
 
 
 function _trrsWallOpening_extrude_7_2_outline_fn(){
-    return new CSG.Path2D([[214.885,-92.475],[219.885,-92.475]]).appendPoint([219.885,-87.475]).appendPoint([214.885,-87.475]).appendPoint([214.885,-92.475]).close().innerToCAG()
+    return new CSG.Path2D([[214.885,-92.975],[219.885,-92.975]]).appendPoint([219.885,-86.975]).appendPoint([214.885,-86.975]).appendPoint([214.885,-92.975]).close().innerToCAG()
 .extrude({ offset: [0, 0, 7.2] });
 }
 
 
 function _trrsWallOpeningFill_extrude_5_6_outline_fn(){
-    return new CSG.Path2D([[216.0038176,-92.4959984],[218.4534444,-92.45324]]).appendPoint([218.3661824,-87.4540016]).appendPoint([215.9165556,-87.49676]).appendPoint([216.0038176,-92.4959984]).close().innerToCAG()
+    return new CSG.Path2D([[216.0125438,-92.9959223],[218.4621706,-92.9531639]]).appendPoint([218.3574562,-86.9540777]).appendPoint([215.9078294,-86.9968361]).appendPoint([216.0125438,-92.9959223]).close().innerToCAG()
 .extrude({ offset: [0, 0, 5.6] });
 }
 

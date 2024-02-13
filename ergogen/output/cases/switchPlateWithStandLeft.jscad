@@ -127,13 +127,13 @@ function _extraArea_extrude_9_6_outline_fn(){
 
 
 function _trrsWallOpeningForStand_extrude_4_outline_fn(){
-    return new CSG.Path2D([[212.385,-92.475],[222.385,-92.475]]).appendPoint([222.385,-87.475]).appendPoint([212.385,-87.475]).appendPoint([212.385,-92.475]).close().innerToCAG()
+    return new CSG.Path2D([[212.385,-92.975],[222.385,-92.975]]).appendPoint([222.385,-86.975]).appendPoint([212.385,-86.975]).appendPoint([212.385,-92.975]).close().innerToCAG()
 .extrude({ offset: [0, 0, 4] });
 }
 
 
 function _wallOpening_extrude_7_2_outline_fn(){
-    return new CSG.Path2D([[195.4,-50.925],[203.1,-50.925]]).appendPoint([203.1,-42.925]).appendPoint([195.4,-42.925]).appendPoint([195.4,-50.925]).close().innerToCAG()
+    return new CSG.Path2D([[194.25,-50.925],[204.25,-50.925]]).appendPoint([204.25,-42.925]).appendPoint([194.25,-42.925]).appendPoint([194.25,-50.925]).close().innerToCAG()
 .extrude({ offset: [0, 0, 7.2] });
 }
 
