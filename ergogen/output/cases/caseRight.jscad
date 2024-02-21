@@ -49,7 +49,7 @@ function boardRight_extrude_7_2_outline_fn(){
 
 
 function _wallOpeningRight_extrude_7_2_outline_fn(){
-    return new CSG.Path2D([[282.65,-48.925],[290.35,-48.925]]).appendPoint([290.35,-44.925]).appendPoint([282.65,-44.925]).appendPoint([282.65,-48.925]).close().innerToCAG()
+    return new CSG.Path2D([[281.5,-50.925],[291.5,-50.925]]).appendPoint([291.5,-42.925]).appendPoint([281.5,-42.925]).appendPoint([281.5,-50.925]).close().innerToCAG()
 .extrude({ offset: [0, 0, 7.2] });
 }
 
@@ -67,7 +67,7 @@ function _trrsWallOpeningRight_extrude_7_2_outline_fn(){
 
 
 function _trrsWallOpeningFillRight_extrude_5_6_outline_fn(){
-    return new CSG.Path2D([[267.096586,-75.1622496],[269.9461519,-75.2119889]]).appendPoint([270.033414,-70.2127504]).appendPoint([267.1838481,-70.1630111]).appendPoint([267.096586,-75.1622496]).close().innerToCAG()
+    return new CSG.Path2D([[267.2878294,-92.9531639],[269.7374562,-92.9959223]]).appendPoint([269.8421706,-86.9968361]).appendPoint([267.3925438,-86.9540777]).appendPoint([267.2878294,-92.9531639]).close().innerToCAG()
 .extrude({ offset: [0, 0, 5.6] });
 }
 

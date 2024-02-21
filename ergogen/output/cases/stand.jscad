@@ -1,11 +1,11 @@
 function _XLextraArea_extrude_9_6_outline_fn(){
-    return new CSG.Path2D([[216.705,-49.381],[185.7965,-46.074]]).appendPoint([185.7965,-94.3425]).appendPoint([217.005,-94.3425]).appendPoint([216.705,-49.381]).close().innerToCAG()
+    return new CSG.Path2D([[216.705,-49.381],[187.7965,-46.074]]).appendPoint([187.7965,-94.3425]).appendPoint([217.005,-94.3425]).appendPoint([216.705,-49.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 9.6] });
 }
 
 
 function _extraArea_extrude_9_6_outline_fn(){
-    return new CSG.Path2D([[215.205,-50.381],[186.7965,-47.174]]).appendPoint([186.7965,-94.0425]).appendPoint([216.005,-94.0425]).appendPoint([215.205,-50.381]).close().innerToCAG()
+    return new CSG.Path2D([[215.205,-50.381],[188.7965,-47.174]]).appendPoint([188.7965,-94.0425]).appendPoint([216.005,-94.0425]).appendPoint([215.205,-50.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 9.6] });
 }
 
