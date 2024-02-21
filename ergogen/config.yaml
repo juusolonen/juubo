@@ -208,11 +208,11 @@ outlines:
       operation: stack
       points:
         - ref: matrix_inner_top
-          shift: [0.53kx+2.5,0.52dpy-0.8]
+          shift: [0.53kx+3.2,0.52dpy-0.8]
         - ref: matrix_inner_bottom
-          shift: [0.53kx+2.5,0.15ky+0.6]
+          shift: [0.53kx+3.2,0.15ky+1.65]
         - ref: matrix_inner_bottom
-          shift: [2.1kx-0.2,0.15ky+0.6]
+          shift: [2.1kx-0.2,0.15ky+1.65]
         - ref: matrix_inner_top
           shift: [2.1kx-1,0.38dpy-0.5]
   _XLextraArea:
@@ -220,11 +220,11 @@ outlines:
       operation: stack
       points:
         - ref: matrix_inner_top
-          shift: [0.53kx+1.5,0.52dpy+0.3]
+          shift: [0.53kx+2.2,0.52dpy+0.3]
         - ref: matrix_inner_bottom
-          shift: [0.53kx+1.5,0.15ky+0.3]
+          shift: [0.53kx+2.2,0.15ky+1.35]
         - ref: matrix_inner_bottom
-          shift: [2.1kx+0.8,0.15ky+0.3]
+          shift: [2.1kx+0.8,0.15ky+1.35]
         - ref: matrix_inner_top
           shift: [2.1kx+0.5,0.38dpy+0.5]
   _extraAreaRight:
@@ -232,11 +232,11 @@ outlines:
       operation: stack
       points:
         - ref: mirror_matrix_inner_top
-          shift: [0.53kx+2.5,0.52dpy-0.8]
+          shift: [0.53kx+3.2,0.52dpy-0.8]
         - ref: mirror_matrix_inner_bottom
-          shift: [0.53kx+2.5,0.15ky+0.6]
+          shift: [0.53kx+3.2,0.15ky+1.65]
         - ref: mirror_matrix_inner_bottom
-          shift: [2.1kx-0.2,0.15ky+0.6]
+          shift: [2.1kx-0.2,0.15ky+1.65]
         - ref: mirror_matrix_inner_top
           shift: [2.1kx-1,0.38dpy-0.5]
   _XLextraAreaRight:
@@ -244,11 +244,11 @@ outlines:
       operation: stack
       points:
         - ref: mirror_matrix_inner_top
-          shift: [0.53kx+1.5,0.52dpy+0.3]
+          shift: [0.53kx+2.2,0.52dpy+0.3]
         - ref: mirror_matrix_inner_bottom
-          shift: [0.53kx+1.5,0.15ky+0.3]
+          shift: [0.53kx+2.2,0.15ky+1.35]
         - ref: mirror_matrix_inner_bottom
-          shift: [2.1kx+0.8,0.15ky+0.3]
+          shift: [2.1kx+0.8,0.15ky+1.35]
         - ref: mirror_matrix_inner_top
           shift: [2.1kx+0.5,0.38dpy+0.5]
   _wallOpening:

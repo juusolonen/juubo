@@ -103,25 +103,25 @@ function _rotaryRight_extrude_1_6_outline_fn(){
 
 
 function _XLextraAreaRight_extrude_1_6_outline_fn(){
-    return new CSG.Path2D([[269.045,-49.381],[297.9535,-46.074]]).appendPoint([297.9535,-94.3425]).appendPoint([268.745,-94.3425]).appendPoint([269.045,-49.381]).close().innerToCAG()
+    return new CSG.Path2D([[269.045,-49.381],[297.2535,-46.074]]).appendPoint([297.2535,-93.2925]).appendPoint([268.745,-93.2925]).appendPoint([269.045,-49.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 1.6] });
 }
 
 
 function _extraAreaRight_extrude_1_outline_fn(){
-    return new CSG.Path2D([[270.545,-50.381],[296.9535,-47.174]]).appendPoint([296.9535,-94.0425]).appendPoint([269.745,-94.0425]).appendPoint([270.545,-50.381]).close().innerToCAG()
+    return new CSG.Path2D([[270.545,-50.381],[296.2535,-47.174]]).appendPoint([296.2535,-92.9925]).appendPoint([269.745,-92.9925]).appendPoint([270.545,-50.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 1] });
 }
 
 
 function _XLextraAreaRight_extrude_9_6_outline_fn(){
-    return new CSG.Path2D([[269.045,-49.381],[297.9535,-46.074]]).appendPoint([297.9535,-94.3425]).appendPoint([268.745,-94.3425]).appendPoint([269.045,-49.381]).close().innerToCAG()
+    return new CSG.Path2D([[269.045,-49.381],[297.2535,-46.074]]).appendPoint([297.2535,-93.2925]).appendPoint([268.745,-93.2925]).appendPoint([269.045,-49.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 9.6] });
 }
 
 
 function _extraAreaRight_extrude_9_6_outline_fn(){
-    return new CSG.Path2D([[270.545,-50.381],[296.9535,-47.174]]).appendPoint([296.9535,-94.0425]).appendPoint([269.745,-94.0425]).appendPoint([270.545,-50.381]).close().innerToCAG()
+    return new CSG.Path2D([[270.545,-50.381],[296.2535,-47.174]]).appendPoint([296.2535,-92.9925]).appendPoint([269.745,-92.9925]).appendPoint([270.545,-50.381]).close().innerToCAG()
 .extrude({ offset: [0, 0, 9.6] });
 }
 
