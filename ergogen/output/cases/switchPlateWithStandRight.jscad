@@ -132,9 +132,9 @@ function _trrsWallOpeningForStandRight_extrude_4_outline_fn(){
 }
 
 
-function _wallOpeningRight_extrude_7_2_outline_fn(){
+function _wallOpeningRight_extrude_8_2_outline_fn(){
     return new CSG.Path2D([[281.5,-50.925],[291.5,-50.925]]).appendPoint([291.5,-42.925]).appendPoint([281.5,-42.925]).appendPoint([281.5,-50.925]).close().innerToCAG()
-.extrude({ offset: [0, 0, 7.2] });
+.extrude({ offset: [0, 0, 8.2] });
 }
 
 
@@ -396,7 +396,7 @@ function _resetOpeningRight_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _openingRight
-                let _openingRight__part_0 = _wallOpeningRight_extrude_7_2_outline_fn();
+                let _openingRight__part_0 = _wallOpeningRight_extrude_8_2_outline_fn();
 
                 // make sure that rotations are relative
                 let _openingRight__part_0_bounds = _openingRight__part_0.getBounds();

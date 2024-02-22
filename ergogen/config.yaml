@@ -6,7 +6,7 @@ units:
   dpx: kx + 6
   dpy: ky + 6
 # M2 Screw Inserts
-  screwSize: 1.5
+  screwSize: 1.4
   standoffSize: 2.5
   plateHole: 3.2
 points:
@@ -275,7 +275,7 @@ outlines:
       adjust:
         - shift: [px,0.5px+19.3]
         - rotate: -6
-      size: [7.7, 1.2]
+      size: [10, 1.2]
   _trrsWallOpening:
     - what: rectangle
       where: matrix_inner_home
@@ -320,13 +320,13 @@ outlines:
       adjust:
         - shift: [px,0.5px+19.3]
         - rotate: -6
-      size: [7.7, 1.2]
+      size: [10, 1.2]
   _trrsWallOpeningRight:
     - what: rectangle
       where: mirror_matrix_inner_home
       adjust:
-        - shift: [1.7px+2, 0.25px]
-      size: [5, 5]
+        - shift: [1.7px+2, -0.5px]
+      size: [5, 6]
   _rotary:
     - what: rectangle
       where: matrix_inner_bottom
@@ -902,13 +902,16 @@ cases:
       extrude: 1
   _outerWall:
     - name: xlBoard
-      extrude: 7.2
+      extrude: 8.2
   _innerWall:
     - name: board
-      extrude: 7.2
+      extrude: 8.2
   _opening:
     - name: _wallOpening
-      extrude: 7.2
+      extrude: 8.2
+  _wallOpeningFill:
+    - name: _wallOpeningFillUsb
+      extrude: 3.8
   _resetOpening:
     - name: _resetOpening
       extrude: 8
@@ -917,10 +920,10 @@ cases:
       extrude: 8
   _trrsOpening:
     - name: _trrsWallOpening
-      extrude: 7.2
+      extrude: 8.2
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
-      extrude: 5.6
+      extrude: 6.6
   _trrsStandOpening:
     - name: _trrsWallOpeningForStand
       extrude: 4
@@ -935,22 +938,22 @@ cases:
       extrude: 1
   _outerWallRight:
     - name: xlBoardRight
-      extrude: 7.2
+      extrude: 8.2
   _innerWallRight:
     - name: boardRight
-      extrude: 7.2
+      extrude: 8.2
   _openingRight:
     - name: _wallOpeningRight
-      extrude: 7.2
+      extrude: 8.2
   _openingFillRight:
     - name: _wallOpeningFillUsbRight
-      extrude: 2
+      extrude: 3.8
   _trrsOpeningRight:
     - name: _trrsWallOpeningRight
-      extrude: 7.2
+      extrude: 8.2
   _trrsOpeningFillRight:
     - name: _trrsWallOpeningFillRight
-      extrude: 5.6
+      extrude: 6.6
   wall:
     - what: case
       name: _outerWall
@@ -958,12 +961,12 @@ cases:
     - what: case
       name: _innerWall
       operation: subtract
-   # - what: case
-    #  name: _opening
-     # operation: subtract
-    #- what: case
-     # name: _openingFill
-     # operation: add
+    - what: case
+      name: _opening
+      operation: subtract
+    - what: case
+      name: _wallOpeningFill
+      operation: add
     - what: case
       name: _trrsOpening
       operation: subtract
@@ -1005,7 +1008,7 @@ cases:
       operation: add
   _holes:
     - name: _mounting
-      extrude: 4
+      extrude: 5
   _plateHoles:
     - name: _plateHole
       extrude: 4
@@ -1014,13 +1017,13 @@ cases:
       extrude: 4
   _standoffs:
     - name: _standoff
-      extrude: 4
+      extrude: 5
   _holesRight:
     - name: _mountingRight
-      extrude: 4
+      extrude: 5
   _standoffsRight:
     - name: _standoffRight
-      extrude: 4
+      extrude: 5
   case:
     - what: case
       name: _standoffs
