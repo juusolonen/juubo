@@ -2,7 +2,7 @@
 
 **This is still a work in progress, i.e. waiting for first assembly & firmware**
 
-juubo keyboard is designed with [Ergogen](https://www.example.com), following FlatFootFox's great guide found [here](https://flatfootfox.com/ergogen-introduction/).
+juubo keyboard is designed with [Ergogen](https://ergogen.cache.works/) following FlatFootFox's great guide found [here](https://flatfootfox.com/ergogen-introduction/).
 
 It is a 36-key split keyboard, with rotary encoders on both side. The initial setup will be wired with ProMicro RP2040 controllers, running with QMK. The pcb is designed so it can be made wireless with Nice!Nano controller and ZMK firmware. 
 
