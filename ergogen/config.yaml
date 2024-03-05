@@ -133,25 +133,25 @@ outlines:
       operation: stack
       points:
         - ref: mirror_matrix_pinky_top
-          shift: [-0.5px,0.5py]
+          shift: [-0.5px-0.5,0.5py+0.5]
         - ref: mirror_matrix_ring_top
-          shift: [-0.5px,0.5py]
+          shift: [-0.5px,0.5py+0.5]
         - ref: mirror_matrix_middle_top
-          shift: [-0.1px,0.6py]
+          shift: [-0.1px,0.6py+0.5]
         - ref: mirror_matrix_inner_top
-          shift: [1.7px,0.4py]
+          shift: [1.7px+0.5,0.4py+0.5]
         - ref: mirror_thumbs_space_cluster
-          shift: [-0.8px,0.5py]
+          shift: [-0.8px-0.5,0.5py+0.5]
         - ref: mirror_thumbs_layer_cluster
-          shift: [3px, -0.2py]
+          shift: [3px+0.5, -0.2py]
         - ref: mirror_thumbs_layer_cluster
-          shift: [2.25px,-1.4py]
+          shift: [2.25px+0.5,-1.4py-0.5]
         - ref: mirror_thumbs_extra_cluster
-          shift: [1.3px,-2.3py]
+          shift: [1.3px,-2.3py-0.5]
         - ref: mirror_matrix_index_bottom
-          shift: [0.1px,-0.7py]
+          shift: [0.1px-0.5,-0.7py-0.5]
         - ref: mirror_matrix_pinky_bottom
-          shift: [-0.5px,-0.5py]
+          shift: [-0.5px-0.5,-0.5py-0.5]
       fillet: 4
   xlBoard:
     - what: polygon
@@ -183,15 +183,15 @@ outlines:
       operation: stack
       points:
         - ref: mirror_matrix_pinky_top
-          shift: [-0.5dpx,0.5dpy]
+          shift: [-0.5dpx-0.5,0.5dpy+0.5]
         - ref: mirror_matrix_ring_top
-          shift: [-0.5dpx,0.5dpy]
+          shift: [-0.5dpx,0.5dpy+0.5]
         - ref: mirror_matrix_middle_top
-          shift: [-0.1dpx,0.6dpy]
+          shift: [-0.1dpx,0.6dpy+0.5]
         - ref: mirror_matrix_inner_top
-          shift: [1.7dpx,0.4dpy]
+          shift: [1.7dpx,0.4dpy+0.5]
         - ref: mirror_thumbs_space_cluster
-          shift: [-0.8dpx,0.5dpy]
+          shift: [-0.8dpx-0.5,0.5dpy+0.5]
         - ref: mirror_thumbs_layer_cluster
           shift: [2.9dpx, -0.2dpy]
         - ref: mirror_thumbs_layer_cluster
@@ -199,9 +199,9 @@ outlines:
         - ref: mirror_thumbs_extra_cluster
           shift: [1.3dpx,-2.15dpy]
         - ref: mirror_matrix_index_bottom
-          shift: [0,-0.7dpy]
+          shift: [0,-0.7dpy-0.5]
         - ref: mirror_matrix_pinky_bottom
-          shift: [-0.5dpx,-0.5dpy]
+          shift: [-0.5dpx-0.5,-0.5dpy-0.5]
       fillet: 4
   _extraArea:
     - what: polygon
@@ -305,7 +305,7 @@ outlines:
     - what: rectangle
       where: mirror_matrix_inner_home
       adjust:
-        - shift: [1.7px+1.8, -0.5px]
+        - shift: [1.7px+2.3, -0.5px]
         - rotate: 1
       size: [2.45, 6]
   _wallOpeningRight:
@@ -318,7 +318,7 @@ outlines:
     - what: rectangle
       where: mirror_matrix_inner_home
       adjust:
-        - shift: [px,0.5px+19.3]
+        - shift: [px,0.5px+19.8]
         - rotate: -6
       size: [10, 1.2]
   _trrsWallOpeningRight:
