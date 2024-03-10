@@ -890,10 +890,10 @@ cases:
       extrude: 1
   _switches:
     - name: switches
-      extrude: 3.6
+      extrude: 1.6
   _switchPlate:
     - name: board
-      extrude: 3.6
+      extrude: 1.6
   _switchPlateRight:
     - name: boardRight
       extrude: 1.6

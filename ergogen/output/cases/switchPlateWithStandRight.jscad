@@ -20,7 +20,7 @@ function _plateHoleRight_extrude_4_outline_fn(){
 }
 
 
-function switches_extrude_3_6_outline_fn(){
+function switches_extrude_1_6_outline_fn(){
     return new CSG.Path2D([[282.0942912,-146.590306],[272.1947963,-136.6908111]]).appendPoint([262.2953014,-146.590306]).appendPoint([272.1947963,-156.4898009]).appendPoint([282.0942912,-146.590306]).close().innerToCAG()
 .union(
     new CSG.Path2D([[213.5552037,-136.6908111],[203.6557088,-146.590306]]).appendPoint([213.5552037,-156.4898009]).appendPoint([223.4546986,-146.590306]).appendPoint([213.5552037,-136.6908111]).close().innerToCAG()
@@ -92,7 +92,7 @@ function switches_extrude_3_6_outline_fn(){
     new CSG.Path2D([[299.8011689,-132.3457046],[290.8021423,-121.6210824]]).appendPoint([280.0775201,-130.620109]).appendPoint([289.0765467,-141.3447312]).appendPoint([299.8011689,-132.3457046]).close().innerToCAG()
 ).union(
     new CSG.Path2D([[194.9478577,-121.6210824],[185.9488311,-132.3457046]]).appendPoint([196.6734533,-141.3447312]).appendPoint([205.6724799,-130.620109]).appendPoint([194.9478577,-121.6210824]).close().innerToCAG()
-).extrude({ offset: [0, 0, 3.6] });
+).extrude({ offset: [0, 0, 1.6] });
 }
 
 
@@ -196,7 +196,7 @@ function _resetOpeningRight_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _switches
-                let _switches__part_0 = switches_extrude_3_6_outline_fn();
+                let _switches__part_0 = switches_extrude_1_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _switches__part_0_bounds = _switches__part_0.getBounds();
