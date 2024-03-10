@@ -1,6 +1,6 @@
-function board_extrude_1_6_outline_fn(){
-    return new CSG.Path2D([[88.475,-107.5029616],[88.475,-53.4606148]]).appendArc([91.4595264,-49.5916597],{"radius":4,"clockwise":true,"large":false}).appendPoint([107.354039,-45.4198716]).appendArc([107.6992526,-45.3453826],{"radius":4,"clockwise":true,"large":false}).appendPoint([135.2221364,-40.6673686]).appendArc([136.3718892,-40.6396559],{"radius":4,"clockwise":true,"large":false}).appendPoint([211.9167923,-49.7612354]).appendArc([215.4368587,-53.6730131],{"radius":4,"clockwise":true,"large":false}).appendPoint([216.4689619,-123.1917781]).appendArc([217.5814403,-125.9009301],{"radius":4,"clockwise":false,"large":false}).appendPoint([232.992932,-141.9723461]).appendArc([232.8335696,-147.6665484],{"radius":4,"clockwise":true,"large":false}).appendPoint([214.2228245,-165.0180804]).appendArc([209.3250765,-165.4526133],{"radius":4,"clockwise":true,"large":false}).appendPoint([157.2577111,-131.8273612]).appendArc([155.5371778,-127.5378986],{"radius":4,"clockwise":true,"large":false}).appendPoint([158.2709756,-116.0922011]).appendArc([154.3584351,-111.1630031],{"radius":4,"clockwise":false,"large":false}).appendPoint([92.4969776,-111.5029012]).appendArc([88.475,-107.5029616],{"radius":4,"clockwise":true,"large":false}).close().innerToCAG()
-.extrude({ offset: [0, 0, 1.6] });
+function board_extrude_3_6_outline_fn(){
+    return new CSG.Path2D([[87.975,-108.0029616],[87.975,-52.9807308]]).appendArc([90.9838832,-49.1054647],{"radius":4,"clockwise":true,"large":false}).appendPoint([107.3659713,-44.9156723]).appendArc([107.6868281,-44.8474944],{"radius":4,"clockwise":true,"large":false}).appendPoint([135.2236325,-40.1671143]).appendArc([136.3704342,-40.1390463],{"radius":4,"clockwise":true,"large":false}).appendPoint([212.4231067,-49.2646074]).appendArc([215.9459538,-53.1661926],{"radius":4,"clockwise":true,"large":false}).appendPoint([217.1697567,-123.1604171]).appendArc([218.2532239,-125.8286286],{"radius":4,"clockwise":false,"large":false}).appendPoint([233.5576039,-142.1266974]).appendArc([233.3927767,-147.7685369],{"radius":4,"clockwise":true,"large":false}).appendPoint([214.5926146,-165.5806373]).appendArc([209.6507131,-166.0236306],{"radius":4,"clockwise":true,"large":false}).appendPoint([156.886493,-131.4832092]).appendArc([155.1895108,-127.1957212],{"radius":4,"clockwise":true,"large":false}).appendPoint([157.7526106,-116.603822]).appendArc([153.8428435,-111.6630888],{"radius":4,"clockwise":false,"large":false}).appendPoint([91.9969776,-112.0029012]).appendArc([87.975,-108.0029616],{"radius":4,"clockwise":true,"large":false}).close().innerToCAG()
+.extrude({ offset: [0, 0, 3.6] });
 }
 
 
@@ -20,7 +20,7 @@ function _plateHole_extrude_4_outline_fn(){
 }
 
 
-function switches_extrude_1_6_outline_fn(){
+function switches_extrude_3_6_outline_fn(){
     return new CSG.Path2D([[282.0942912,-146.590306],[272.1947963,-136.6908111]]).appendPoint([262.2953014,-146.590306]).appendPoint([272.1947963,-156.4898009]).appendPoint([282.0942912,-146.590306]).close().innerToCAG()
 .union(
     new CSG.Path2D([[213.5552037,-136.6908111],[203.6557088,-146.590306]]).appendPoint([213.5552037,-156.4898009]).appendPoint([223.4546986,-146.590306]).appendPoint([213.5552037,-136.6908111]).close().innerToCAG()
@@ -92,19 +92,19 @@ function switches_extrude_1_6_outline_fn(){
     new CSG.Path2D([[299.8011689,-132.3457046],[290.8021423,-121.6210824]]).appendPoint([280.0775201,-130.620109]).appendPoint([289.0765467,-141.3447312]).appendPoint([299.8011689,-132.3457046]).close().innerToCAG()
 ).union(
     new CSG.Path2D([[194.9478577,-121.6210824],[185.9488311,-132.3457046]]).appendPoint([196.6734533,-141.3447312]).appendPoint([205.6724799,-130.620109]).appendPoint([194.9478577,-121.6210824]).close().innerToCAG()
-).extrude({ offset: [0, 0, 1.6] });
+).extrude({ offset: [0, 0, 3.6] });
 }
 
 
-function _rotary_extrude_1_6_outline_fn(){
+function _rotary_extrude_3_6_outline_fn(){
     return new CSG.Path2D([[192.25,-109.11],[206.25,-109.11]]).appendPoint([206.25,-95.11]).appendPoint([192.25,-95.11]).appendPoint([192.25,-109.11]).close().innerToCAG()
-.extrude({ offset: [0, 0, 1.6] });
+.extrude({ offset: [0, 0, 3.6] });
 }
 
 
-function _XLextraArea_extrude_1_6_outline_fn(){
+function _XLextraArea_extrude_3_6_outline_fn(){
     return new CSG.Path2D([[216.705,-49.381],[188.4965,-46.074]]).appendPoint([188.4965,-93.2925]).appendPoint([217.005,-93.2925]).appendPoint([216.705,-49.381]).close().innerToCAG()
-.extrude({ offset: [0, 0, 1.6] });
+.extrude({ offset: [0, 0, 3.6] });
 }
 
 
@@ -114,15 +114,15 @@ function _extraArea_extrude_1_outline_fn(){
 }
 
 
-function _XLextraArea_extrude_9_6_outline_fn(){
+function _XLextraArea_extrude_9_outline_fn(){
     return new CSG.Path2D([[216.705,-49.381],[188.4965,-46.074]]).appendPoint([188.4965,-93.2925]).appendPoint([217.005,-93.2925]).appendPoint([216.705,-49.381]).close().innerToCAG()
-.extrude({ offset: [0, 0, 9.6] });
+.extrude({ offset: [0, 0, 9] });
 }
 
 
-function _extraArea_extrude_9_6_outline_fn(){
+function _extraArea_extrude_9_outline_fn(){
     return new CSG.Path2D([[215.205,-50.381],[189.4965,-47.174]]).appendPoint([189.4965,-92.9925]).appendPoint([216.005,-92.9925]).appendPoint([215.205,-50.381]).close().innerToCAG()
-.extrude({ offset: [0, 0, 9.6] });
+.extrude({ offset: [0, 0, 9] });
 }
 
 
@@ -132,15 +132,15 @@ function _trrsWallOpeningForStand_extrude_4_outline_fn(){
 }
 
 
-function _wallOpening_extrude_8_2_outline_fn(){
+function _wallOpening_extrude_6_2_outline_fn(){
     return new CSG.Path2D([[194.25,-50.925],[204.25,-50.925]]).appendPoint([204.25,-42.925]).appendPoint([194.25,-42.925]).appendPoint([194.25,-50.925]).close().innerToCAG()
-.extrude({ offset: [0, 0, 8.2] });
+.extrude({ offset: [0, 0, 6.2] });
 }
 
 
-function _resetOpening_extrude_8_outline_fn(){
-    return new CSG.Path2D([[209.08,-60.01],[217.08,-60.01]]).appendPoint([217.08,-52.01]).appendPoint([209.08,-52.01]).appendPoint([209.08,-60.01]).close().innerToCAG()
-.extrude({ offset: [0, 0, 8] });
+function _resetOpening_extrude_4_outline_fn(){
+    return new CSG.Path2D([[209.08,-59.01],[217.08,-59.01]]).appendPoint([217.08,-53.01]).appendPoint([209.08,-53.01]).appendPoint([209.08,-59.01]).close().innerToCAG()
+.extrude({ offset: [0, 0, 4] });
 }
 
 
@@ -150,7 +150,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _switchPlate
-                let _switchPlate__part_0 = board_extrude_1_6_outline_fn();
+                let _switchPlate__part_0 = board_extrude_3_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _switchPlate__part_0_bounds = _switchPlate__part_0.getBounds();
@@ -196,7 +196,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _switches
-                let _switches__part_0 = switches_extrude_1_6_outline_fn();
+                let _switches__part_0 = switches_extrude_3_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _switches__part_0_bounds = _switches__part_0.getBounds();
@@ -219,7 +219,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _rotary
-                let _rotary__part_0 = _rotary_extrude_1_6_outline_fn();
+                let _rotary__part_0 = _rotary_extrude_3_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _rotary__part_0_bounds = _rotary__part_0.getBounds();
@@ -242,7 +242,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _XLextraArea
-                let _XLextraArea__part_0 = _XLextraArea_extrude_1_6_outline_fn();
+                let _XLextraArea__part_0 = _XLextraArea_extrude_3_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _XLextraArea__part_0_bounds = _XLextraArea__part_0.getBounds();
@@ -275,7 +275,7 @@ function _resetOpening_extrude_8_outline_fn(){
                 _extraAreaUp__part_0 = rotate([0,0,0], _extraAreaUp__part_0);
                 _extraAreaUp__part_0 = translate([_extraAreaUp__part_0_x, _extraAreaUp__part_0_y, 0], _extraAreaUp__part_0);
 
-                _extraAreaUp__part_0 = translate([0,0,8.6], _extraAreaUp__part_0);
+                _extraAreaUp__part_0 = translate([0,0,8], _extraAreaUp__part_0);
                 let result = _extraAreaUp__part_0;
                 
             
@@ -327,7 +327,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _outerStand
-                let _outerStand__part_0 = _XLextraArea_extrude_9_6_outline_fn();
+                let _outerStand__part_0 = _XLextraArea_extrude_9_outline_fn();
 
                 // make sure that rotations are relative
                 let _outerStand__part_0_bounds = _outerStand__part_0.getBounds();
@@ -350,7 +350,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _innerStand
-                let _innerStand__part_0 = _extraArea_extrude_9_6_outline_fn();
+                let _innerStand__part_0 = _extraArea_extrude_9_outline_fn();
 
                 // make sure that rotations are relative
                 let _innerStand__part_0_bounds = _innerStand__part_0.getBounds();
@@ -392,22 +392,22 @@ function _resetOpening_extrude_8_outline_fn(){
             
             
 
-                function _opening_case_fn() {
+                function _openingForStand_case_fn() {
                     
 
-                // creating part 0 of case _opening
-                let _opening__part_0 = _wallOpening_extrude_8_2_outline_fn();
+                // creating part 0 of case _openingForStand
+                let _openingForStand__part_0 = _wallOpening_extrude_6_2_outline_fn();
 
                 // make sure that rotations are relative
-                let _opening__part_0_bounds = _opening__part_0.getBounds();
-                let _opening__part_0_x = _opening__part_0_bounds[0].x + (_opening__part_0_bounds[1].x - _opening__part_0_bounds[0].x) / 2
-                let _opening__part_0_y = _opening__part_0_bounds[0].y + (_opening__part_0_bounds[1].y - _opening__part_0_bounds[0].y) / 2
-                _opening__part_0 = translate([-_opening__part_0_x, -_opening__part_0_y, 0], _opening__part_0);
-                _opening__part_0 = rotate([0,0,0], _opening__part_0);
-                _opening__part_0 = translate([_opening__part_0_x, _opening__part_0_y, 0], _opening__part_0);
+                let _openingForStand__part_0_bounds = _openingForStand__part_0.getBounds();
+                let _openingForStand__part_0_x = _openingForStand__part_0_bounds[0].x + (_openingForStand__part_0_bounds[1].x - _openingForStand__part_0_bounds[0].x) / 2
+                let _openingForStand__part_0_y = _openingForStand__part_0_bounds[0].y + (_openingForStand__part_0_bounds[1].y - _openingForStand__part_0_bounds[0].y) / 2
+                _openingForStand__part_0 = translate([-_openingForStand__part_0_x, -_openingForStand__part_0_y, 0], _openingForStand__part_0);
+                _openingForStand__part_0 = rotate([0,0,0], _openingForStand__part_0);
+                _openingForStand__part_0 = translate([_openingForStand__part_0_x, _openingForStand__part_0_y, 0], _openingForStand__part_0);
 
-                _opening__part_0 = translate([0,0,0], _opening__part_0);
-                let result = _opening__part_0;
+                _openingForStand__part_0 = translate([0,0,0], _openingForStand__part_0);
+                let result = _openingForStand__part_0;
                 
             
                     return result;
@@ -419,7 +419,7 @@ function _resetOpening_extrude_8_outline_fn(){
                     
 
                 // creating part 0 of case _resetOpening
-                let _resetOpening__part_0 = _resetOpening_extrude_8_outline_fn();
+                let _resetOpening__part_0 = _resetOpening_extrude_4_outline_fn();
 
                 // make sure that rotations are relative
                 let _resetOpening__part_0_bounds = _resetOpening__part_0.getBounds();
@@ -570,7 +570,7 @@ function _resetOpening_extrude_8_outline_fn(){
             
 
                 // creating part 8 of case switchPlateWithStandLeft
-                let switchPlateWithStandLeft__part_8 = _opening_case_fn();
+                let switchPlateWithStandLeft__part_8 = _openingForStand_case_fn();
 
                 // make sure that rotations are relative
                 let switchPlateWithStandLeft__part_8_bounds = switchPlateWithStandLeft__part_8.getBounds();

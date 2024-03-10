@@ -1,12 +1,12 @@
-function _XLextraArea_extrude_9_6_outline_fn(){
+function _XLextraArea_extrude_9_outline_fn(){
     return new CSG.Path2D([[216.705,-49.381],[188.4965,-46.074]]).appendPoint([188.4965,-93.2925]).appendPoint([217.005,-93.2925]).appendPoint([216.705,-49.381]).close().innerToCAG()
-.extrude({ offset: [0, 0, 9.6] });
+.extrude({ offset: [0, 0, 9] });
 }
 
 
-function _extraArea_extrude_9_6_outline_fn(){
+function _extraArea_extrude_9_outline_fn(){
     return new CSG.Path2D([[215.205,-50.381],[189.4965,-47.174]]).appendPoint([189.4965,-92.9925]).appendPoint([216.005,-92.9925]).appendPoint([215.205,-50.381]).close().innerToCAG()
-.extrude({ offset: [0, 0, 9.6] });
+.extrude({ offset: [0, 0, 9] });
 }
 
 
@@ -16,7 +16,7 @@ function _extraArea_extrude_9_6_outline_fn(){
                     
 
                 // creating part 0 of case _outerStand
-                let _outerStand__part_0 = _XLextraArea_extrude_9_6_outline_fn();
+                let _outerStand__part_0 = _XLextraArea_extrude_9_outline_fn();
 
                 // make sure that rotations are relative
                 let _outerStand__part_0_bounds = _outerStand__part_0.getBounds();
@@ -39,7 +39,7 @@ function _extraArea_extrude_9_6_outline_fn(){
                     
 
                 // creating part 0 of case _innerStand
-                let _innerStand__part_0 = _extraArea_extrude_9_6_outline_fn();
+                let _innerStand__part_0 = _extraArea_extrude_9_outline_fn();
 
                 // make sure that rotations are relative
                 let _innerStand__part_0_bounds = _innerStand__part_0.getBounds();

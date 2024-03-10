@@ -262,7 +262,7 @@ outlines:
       where: matrix_inner_bottom
       adjust:
           shift: [1.6px, 1.8px]
-      size: [8,8]
+      size: [8,6]
   _resetOpeningRight:
     - what: rectangle
       where: mirror_matrix_inner_bottom
@@ -855,13 +855,13 @@ cases:
       extrude: 1.6
   _XLextraArea:
     - name: _XLextraArea
-      extrude: 1.6
+      extrude: 3.6
   _XLextraAreaRight:
     - name: _XLextraAreaRight
       extrude: 1.6
   _extraAreaUp:
     - name: _extraArea
-      shift: [0, 0, 8.6]
+      shift: [0, 0, 8]
       extrude: 1
   _extraAreaUpRight:
     - name: _extraAreaRight
@@ -869,10 +869,10 @@ cases:
       extrude: 1
   _outerStand:
     - name: _XLextraArea
-      extrude: 9.6
+      extrude: 9
   _innerStand:
     - name: _extraArea
-      extrude: 9.6
+      extrude: 9
   _outerStandRight:
     - name: _XLextraAreaRight
       extrude: 9.6
@@ -881,19 +881,19 @@ cases:
       extrude: 9.6
   _rotary:
     - name: _rotary
-      extrude: 1.6
+      extrude: 3.6
   _rotaryRight:
     - name: _rotaryRight
-      extrude: 1.6
+      extrude: 3.6
   bottom:
     - name: board
       extrude: 1
   _switches:
     - name: switches
-      extrude: 1.6
+      extrude: 3.6
   _switchPlate:
     - name: board
-      extrude: 1.6
+      extrude: 3.6
   _switchPlateRight:
     - name: boardRight
       extrude: 1.6
@@ -902,25 +902,28 @@ cases:
       extrude: 1
   _outerWall:
     - name: xlBoard
-      extrude: 8.2
+      extrude: 10.2
   _innerWall:
     - name: board
-      extrude: 8.2
+      extrude: 10.2
   _opening:
     - name: _wallOpening
-      extrude: 8.2
+      extrude: 10.2
+  _openingForStand:
+    - name: _wallOpening
+      extrude: 6.2
   _wallOpeningFill:
     - name: _wallOpeningFillUsb
-      extrude: 3.8
+      extrude: 3
   _resetOpening:
     - name: _resetOpening
-      extrude: 8
+      extrude: 4
   _resetOpeningRight:
     - name: _resetOpeningRight
       extrude: 8
   _trrsOpening:
     - name: _trrsWallOpening
-      extrude: 8.2
+      extrude: 10.2
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
       extrude: 6.6
@@ -1079,7 +1082,7 @@ cases:
       operation: subtract
       shift: [2, 0, 0]
     - what: case
-      name: _opening
+      name: _openingForStand
       operation: subtract
     - what: case
       name: _resetOpening
