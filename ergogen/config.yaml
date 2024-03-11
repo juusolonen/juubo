@@ -902,13 +902,13 @@ cases:
       extrude: 1
   _outerWall:
     - name: xlBoard
-      extrude: 10.2
+      extrude: 10.6
   _innerWall:
     - name: board
-      extrude: 10.2
+      extrude: 10.6
   _opening:
     - name: _wallOpening
-      extrude: 10.2
+      extrude: 10.6
   _openingForStand:
     - name: _wallOpening
       extrude: 6.2
@@ -923,7 +923,7 @@ cases:
       extrude: 8
   _trrsOpening:
     - name: _trrsWallOpening
-      extrude: 10.2
+      extrude: 10.6
   _trrsOpeningFill:
     - name: _trrsWallOpeningFill
       extrude: 6.6
