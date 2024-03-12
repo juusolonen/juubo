@@ -268,7 +268,7 @@ outlines:
       where: mirror_matrix_inner_bottom
       adjust:
           shift: [1.6px, 1.8px]
-      size: [8,8]
+      size: [8,6]
   _wallOpeningFillUsb:
     - what: rectangle
       where: matrix_inner_home
@@ -865,7 +865,7 @@ cases:
       extrude: 1
   _extraAreaUpRight:
     - name: _extraAreaRight
-      shift: [0, 0, 8.6]
+      shift: [0, 0, 8]
       extrude: 1
   _outerStand:
     - name: _XLextraArea
@@ -875,10 +875,10 @@ cases:
       extrude: 9
   _outerStandRight:
     - name: _XLextraAreaRight
-      extrude: 9.6
+      extrude: 9
   _innerStandRight:
     - name: _extraAreaRight
-      extrude: 9.6
+      extrude: 9
   _rotary:
     - name: _rotary
       extrude: 3.6
@@ -920,7 +920,7 @@ cases:
       extrude: 4
   _resetOpeningRight:
     - name: _resetOpeningRight
-      extrude: 8
+      extrude: 4
   _trrsOpening:
     - name: _trrsWallOpening
       extrude: 10.6
@@ -941,19 +941,22 @@ cases:
       extrude: 1
   _outerWallRight:
     - name: xlBoardRight
-      extrude: 8.2
+      extrude: 10.6
   _innerWallRight:
     - name: boardRight
-      extrude: 8.2
+      extrude: 10.6
   _openingRight:
     - name: _wallOpeningRight
-      extrude: 8.2
+      extrude: 10.6
+  _openingForStandRight:
+    - name: _wallOpeningRight
+      extrude: 3
   _openingFillRight:
     - name: _wallOpeningFillUsbRight
-      extrude: 3.8
+      extrude: 3
   _trrsOpeningRight:
     - name: _trrsWallOpeningRight
-      extrude: 8.2
+      extrude: 10.6
   _trrsOpeningFillRight:
     - name: _trrsWallOpeningFillRight
       extrude: 6.6
@@ -1116,7 +1119,7 @@ cases:
       operation: subtract
       shift: [2, 0, 0]
     - what: case
-      name: _openingRight
+      name: _openingForStandRight
       operation: subtract
     - what: case
       name: _resetOpeningRight
