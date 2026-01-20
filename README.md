@@ -1,10 +1,12 @@
 # juubo ergonomic split keyboard
 
-**This is still a work in progress, i.e. waiting for first assembly & firmware**
 
 juubo keyboard is designed with [Ergogen](https://ergogen.cache.works/) following FlatFootFox's great guide found [here](https://flatfootfox.com/ergogen-introduction/).
 
 It is a 36-key split keyboard, with rotary encoders on both side. The initial setup will be wired with ProMicro RP2040 controllers, running with QMK. The pcb is designed so it can be made wireless with Nice!Nano controller and ZMK firmware. 
+
+> `qmk` directory in this repo contains needed files to get the qmk firmware running. Note that the rotary encoders are not perfect so they might need some tweaking.
+> Also note that the default keymap is a Colemak-DH with a Finnish hint.
 
 **The files in /external-3d-models are not my own creation. They are just added to this repo just to keep all things in the same place**
 
