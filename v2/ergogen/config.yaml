@@ -1,0 +1,1065 @@
+units:
+  kx: U
+  ky: U
+  px: kx + 4
+  py: ky + 4
+  dpx: kx + 6
+  dpy: ky + 6
+# M2 Screw Inserts
+  screwSize: 1.4
+  standoffSize: 2.5
+  plateHole: 3.2
+points:
+  mirror: &mirror
+    ref: matrix_inner_top
+    distance: 7kx
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -100]
+      key:
+        padding: ky
+        spread: kx
+      columns:
+        outer:
+          rows:
+            mod:
+              skip: true
+              #TODO: nets
+            top:
+              skip: true
+        pinky:
+          rows:
+            mod:
+              skip: true
+          key:
+            column_net: P21
+            mirror.column_net: P4
+        ring:
+          rows.mod.skip: true
+          key:
+            stagger: 5
+            column_net: P20
+            mirror.column_net: P5
+        middle:
+          key:
+            stagger: 2.5
+            column_net: P19
+            mirror.column_net: P6
+        index:
+          key:
+            stagger: -2.5
+            column_net: P18
+            mirror.column_net: P7
+        inner:
+          key:
+            stagger: -2.5
+            column_net: P15
+            mirror.column_net: P8
+      rows:
+        bottom:
+          row_net: P10
+          mirror.row_net: P16
+        home:
+          row_net: P16
+          mirror.row_net: P14
+        top:
+          row_net: P14
+          mirror.row_net: P15
+    thumbs:
+      key:
+        padding: py
+        spread: px
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-6, -py-2]
+      columns:
+        layer:
+          key:
+            splay: -15
+            column_net: P19
+            mirror.column_net: P6
+        space:
+          key:
+            rotate: -115
+            shift: [4,-2]
+            width: 1.5kx
+            column_net: P18
+            mirror.column_net: P7
+        extra:
+          key:
+            rotate: -120
+            shift: [2,-12]
+            width: 1.5kx
+            column_net: P15
+            mirror.column_net: P8
+      rows:
+        cluster:
+          row_net: P6
+          mirror.row_net: P10
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  switches:
+    - what: rectangle
+      where: true
+      size: 14
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_home
+          shift: [-0.5px-0.5,0.5py+0.5]
+        - ref: matrix_pinky_top
+          shift: [-0.5px-0.5,0.5py+0.5]
+        - ref: matrix_ring_top
+          shift: [-0.5px,0.5py+0.5]
+        - ref: matrix_middle_top
+          shift: [-0.1px,0.6py+0.5]
+        - ref: matrix_inner_top
+          shift: [1.7px+0.5,0.4py+0.5]
+        - ref: thumbs_space_cluster
+          shift: [-0.8px-0.5,0.5py+0.5]
+        - ref: thumbs_layer_cluster
+          shift: [3px+0.5, -0.2py]
+        - ref: thumbs_layer_cluster
+          shift: [2.25px+0.5,-1.4py-0.5]
+        - ref: thumbs_extra_cluster
+          shift: [1.3px,-2.3py-0.5]
+        - ref: matrix_index_bottom
+          shift: [0.1px-0.5,-0.7py-0.5]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px-0.5,-0.5py-0.5]
+        - ref: matrix_outer_bottom
+          shift: [-0.5px-0.5,-0.5py-0.5]
+      fillet: 4
+  boardRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_outer_home
+          shift: [-0.5px-0.5,0.5py+0.5]
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.5px-0.5,0.5py+0.5]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.5px,0.5py+0.5]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.1px,0.6py+0.5]
+        - ref: mirror_matrix_inner_top
+          shift: [1.7px+0.5,0.4py+0.5]
+        - ref: mirror_thumbs_space_cluster
+          shift: [-0.8px-0.5,0.5py+0.5]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [3px+0.5, -0.2py]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.25px+0.5,-1.4py-0.5]
+        - ref: mirror_thumbs_extra_cluster
+          shift: [1.3px,-2.3py-0.5]
+        - ref: mirror_matrix_index_bottom
+          shift: [0.1px-0.5,-0.7py-0.5]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.5px-0.5,-0.5py-0.5]
+        - ref: mirror_matrix_outer_bottom
+          shift: [-0.5px-0.5,-0.5py-0.5]
+      fillet: 4
+  xlBoard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_home
+          shift: [-0.5dpx-0.5,0.5dpy+0.5]
+        - ref: matrix_pinky_top
+          shift: [-0.5dpx-0.5,0.5dpy+0.5]
+        - ref: matrix_ring_top
+          shift: [-0.5dpx,0.5dpy+0.5]
+        - ref: matrix_middle_top
+          shift: [-0.1dpx,0.6dpy+0.5]
+        - ref: matrix_inner_top
+          shift: [1.7dpx,0.4dpy+0.5]
+        - ref: thumbs_space_cluster
+          shift: [-0.8dpx-0.5,0.5dpy+0.5]
+        - ref: thumbs_layer_cluster
+          shift: [2.9dpx, -0.2dpy]
+        - ref: thumbs_layer_cluster
+          shift: [2.1dpx,-1.4dpy]
+        - ref: thumbs_extra_cluster
+          shift: [1.3dpx,-2.15dpy]
+        - ref: matrix_index_bottom
+          shift: [0,-0.7dpy-0.5]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5dpx-0.5,-0.5dpy-0.5]
+        - ref: matrix_outer_bottom
+          shift: [-0.5dpx-0.5,-0.5dpy-0.5]
+      fillet: 4
+  xlBoardRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_outer_home
+          shift: [-0.5dpx-0.5,0.5dpy+0.5]
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.5dpx-0.5,0.5dpy+0.5]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.5dpx,0.5dpy+0.5]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.1dpx,0.6dpy+0.5]
+        - ref: mirror_matrix_inner_top
+          shift: [1.7dpx,0.4dpy+0.5]
+        - ref: mirror_thumbs_space_cluster
+          shift: [-0.8dpx-0.5,0.5dpy+0.5]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.9dpx, -0.2dpy]
+        - ref: mirror_thumbs_layer_cluster
+          shift: [2.1dpx,-1.4dpy]
+        - ref: mirror_thumbs_extra_cluster
+          shift: [1.3dpx,-2.15dpy]
+        - ref: mirror_matrix_index_bottom
+          shift: [0,-0.7dpy-0.5]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.5dpx-0.5,-0.5dpy-0.5]
+        - ref: mirror_matrix_outer_bottom
+          shift: [-0.5dpx-0.5,-0.5dpy-0.5]
+      fillet: 4
+  _extraArea:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.53kx+3.2,0.52dpy-0.8]
+        - ref: matrix_inner_bottom
+          shift: [0.53kx+3.2,0.15ky+1.65]
+        - ref: matrix_inner_bottom
+          shift: [2.1kx-0.2,0.15ky+1.65]
+        - ref: matrix_inner_top
+          shift: [2.1kx-1,0.38dpy-0.5]
+  _XLextraArea:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.53kx+2.2,0.53dpy+0.35]
+        - ref: matrix_inner_bottom
+          shift: [0.53kx+2.2,0.15ky+1.35]
+        - ref: matrix_inner_bottom
+          shift: [2.15kx+0.5,0.15ky+1.35]
+        - ref: matrix_inner_top
+          shift: [2.1kx+0.5,0.38dpy+0.5]
+  _extraAreaRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_inner_top
+          shift: [0.53kx+3.2,0.52dpy-0.8]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.53kx+3.2,0.15ky+1.65]
+        - ref: mirror_matrix_inner_bottom
+          shift: [2.1kx-0.2,0.15ky+1.65]
+        - ref: mirror_matrix_inner_top
+          shift: [2.1kx-1,0.38dpy-0.5]
+  _XLextraAreaRight:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_inner_top
+          shift: [0.53kx+2.2,0.52dpy+0.3]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.53kx+2.2,0.15ky+1.35]
+        - ref: mirror_matrix_inner_bottom
+          shift: [2.1kx+0.8,0.15ky+1.35]
+        - ref: mirror_matrix_inner_top
+          shift: [2.1kx+0.5,0.38dpy+0.5]
+  _wallOpening:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+20]
+      size: [10, 8]
+  _resetOpeningCase:
+    - what: rectangle
+      where: matrix_inner_bottom
+      adjust:
+          shift: [1.9px, 1.8px]
+      size: [9,6]
+  _resetOpeningCaseFill:
+    - what: rectangle
+      where: matrix_inner_bottom
+      adjust:
+          shift: [1.76px, 1.8px]
+      size: [4,6]
+  _resetOpeningRight:
+    - what: rectangle
+      where: mirror_matrix_inner_bottom
+      adjust:
+          shift: [1.6px, 1.8px]
+      size: [8,6]
+  _wallOpeningFillUsb:
+    - what: rectangle
+      where: matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+19.8]
+        - rotate: -6
+      size: [10, 1.2]
+  _wallOpeningRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+20]
+      size: [10, 8]
+  _wallOpeningFillUsbRight:
+    - what: rectangle
+      where: mirror_matrix_inner_home
+      adjust:
+        - shift: [px,0.5px+19.8]
+        - rotate: -6
+      size: [10, 1.2]
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+  switchPlate:
+    - name: board
+    - operation: subtract
+      name: switches
+  _finalMount:
+    - name: switchPlate
+    - operation: subtract
+      name: _extraArea
+  _mounting:
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [matrix_inner_home]
+        shift: [1.45kx, -1.2ky]
+  _standoff:
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [matrix_inner_home]
+        shift: [1.45kx, -1.2ky]
+  _plateHole:
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [matrix_inner_home]
+        shift: [1.45kx, -1.2ky]
+  _mountingRight:
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: [mirror_matrix_inner_home]
+        shift: [1.45kx, -1.2ky]
+  _standoffRight:
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: [mirror_matrix_inner_home]
+        shift: [1.45kx, -1.2ky]  
+  _plateHoleRight:   
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-1.1kx, -1.55ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_pinky_top]
+        shift: [-kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_index_top]
+        shift: [0.5kx, -0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.5kx, 0.7ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_thumbs_layer_cluster]
+        shift: [0.7kx, 0.3ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_thumbs_extra_cluster]
+        shift: [0, -0.5ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_index_bottom]
+        shift: [0.5kx, 0.5ky]
+    - what: circle
+      radius: plateHole
+      where:
+        ref: [mirror_matrix_inner_home]
+        shift: [1.45kx, -1.2ky]
+pcbs:
+  juubo_left:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: /^(matrix|thumbs)_.*/ 
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^(matrix|thumbs)_.*/ 
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_inner_home
+          shift: [px,0.5px]
+          rotate: -90
+      onOff:
+        what: slider
+        params:
+          side: 'B'
+          from: RAW
+          to: B+
+        where:
+          ref: matrix_inner_top
+          shift: [px,0.39px]
+      jst:
+        what: jstph
+        params:
+          side: 'F'
+          pos: B+
+          neg: GND
+        where:
+          ref: matrix_inner_home
+          shift: [px,-0.45py]
+        adjust:
+          rotate: -90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: 
+            - matrix_inner_bottom
+          shift: [1.55px, 1.8px]
+          rotate: 90
+      holeOuterBottomLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_top]
+          shift: [-1.1kx, -1.55ky]
+      holeOuterTopLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_top]
+          shift: [-kx, -0.3ky]
+      holeTopLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_top]
+          shift: [0.5kx, -0.3ky]
+      holeTopInner:
+        what: mountinghole
+        where:
+          ref: [matrix_index_top]
+          shift: [0.5kx, -0.3ky]
+      holeBottomLeft:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_bottom]
+          shift: [0.5kx, 0.7ky]
+      holeThumbLeft:
+        what: mountinghole
+        where:
+          ref: [thumbs_layer_cluster]
+          shift: [0.7kx, 0.3ky]
+      holeThumbsRoght:
+        what: mountinghole
+        where:
+          ref: [thumbs_extra_cluster]
+          shift: [0, -0.5ky]
+      holeInnerBottomRight:
+        what: mountinghole
+        where:
+          ref: [matrix_index_bottom]
+          shift: [0.5kx, 0.5ky]
+      holeJstBelow:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_home]
+          shift: [1.45kx, -1.2ky]
+  juubo_right:
+    outlines:
+      main:
+        outline: boardRight
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: /^mirror_.*/ 
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^mirror_.*/ 
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [px,0.5px]
+          rotate: 90
+      onOff:
+        what: slider
+        params:
+          side: 'B'
+          from: RAW
+          to: B+
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [px,0.39px]
+      jst:
+        what: jstph
+        params:
+          side: 'F'
+          pos: B+
+          neg: GND
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [px,-0.45py]
+        adjust:
+          rotate: -90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: 
+            - mirror_matrix_inner_bottom
+          shift: [1.55px, 1.8px]
+          rotate: 90
+      holeOuterBottomLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_top]
+          shift: [-0.9kx, -1.53ky]
+      holeOuterTopLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_top]
+          shift: [-kx, -0.3ky]
+      holeTopLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_top]
+          shift: [0.5kx, -0.3ky]
+      holeTopInner:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_top]
+          shift: [0.5kx, -0.3ky]
+      holeBottomLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_bottom]
+          shift: [0.5kx, 0.7ky]
+      holeThumbLeft:
+        what: mountinghole
+        where:
+          ref: [mirror_thumbs_layer_cluster]
+          shift: [0.7kx, 0.3ky]
+      holeThumbsRoght:
+        what: mountinghole
+        where:
+          ref: [mirror_thumbs_extra_cluster]
+          shift: [0, -0.5ky]
+      holeInnerBottomRight:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_index_bottom]
+          shift: [0.5kx, 0.5ky]
+      holeJstBelow:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_home]
+          shift: [1.45kx, -1.2ky]
+cases:
+  _extraArea:
+    - name: _extraArea
+      extrude: 1.6
+  _extraAreaRight:
+    - name: _extraAreaRight
+      extrude: 1.6
+  _XLextraArea:
+    - name: _XLextraArea
+      extrude: 3.6
+  _XLextraAreaRight:
+    - name: _XLextraAreaRight
+      extrude: 1.6
+  _extraAreaUp:
+    - name: _extraArea
+      shift: [0, 0, 8]
+      extrude: 1
+  _extraAreaUpRight:
+    - name: _extraAreaRight
+      shift: [0, 0, 8]
+      extrude: 1
+  _outerStand:
+    - name: _XLextraArea
+      extrude: 9
+  _innerStand:
+    - name: _extraArea
+      extrude: 9
+  _outerStandRight:
+    - name: _XLextraAreaRight
+      extrude: 9
+  _innerStandRight:
+    - name: _extraAreaRight
+      extrude: 9
+  bottom:
+    - name: board
+      extrude: 1
+  _switches:
+    - name: switches
+      extrude: 1.6
+  _switchPlate:
+    - name: board
+      extrude: 1.6
+  _switchPlateRight:
+    - name: boardRight
+      extrude: 1.6
+  xlBottom:
+    - name: xlBoard
+      extrude: 1
+  _outerWall:
+    - name: xlBoard
+      extrude: 10.6
+  _innerWall:
+    - name: board
+      extrude: 10.6
+  _opening:
+    - name: _wallOpening
+      extrude: 10.6
+  _openingForStand:
+    - name: _wallOpening
+      extrude: 6.2
+  _wallOpeningFill:
+    - name: _wallOpeningFillUsb
+      extrude: 3
+  _resetOpeningCase:
+    - name: _resetOpeningCase
+      extrude: 10.6
+  _resetOpeningCaseFill:
+    - name: _resetOpeningCaseFill
+      extrude: 6.6
+  _resetOpeningRight:
+    - name: _resetOpeningRight
+      extrude: 4
+  bottomRight:
+    - name: boardRight
+      extrude: 1
+  xlBottomRight:
+    - name: xlBoardRight
+      extrude: 1
+  _outerWallRight:
+    - name: xlBoardRight
+      extrude: 10.6
+  _innerWallRight:
+    - name: boardRight
+      extrude: 10.6
+  _openingRight:
+    - name: _wallOpeningRight
+      extrude: 10.6
+  _openingForStandRight:
+    - name: _wallOpeningRight
+      extrude: 3
+  _openingFillRight:
+    - name: _wallOpeningFillUsbRight
+      extrude: 3
+  wall:
+    - what: case
+      name: _outerWall
+      operation: add
+    - what: case
+      name: _innerWall
+      operation: subtract
+    - what: case
+      name: _opening
+      operation: subtract
+    - what: case
+      name: _wallOpeningFill
+      operation: add
+  stand:
+    - what: case
+      name: _outerStand
+      operation: add
+    - what: case
+      name: _innerStand
+      operation: subtract
+  _standRight:
+    - what: case
+      name: _outerStandRight
+      operation: add
+    - what: case
+      name: _innerStandRight
+      operation: subtract
+  wallRight:
+    - what: case
+      name: _outerWallRight
+      operation: add
+    - what: case
+      name: _innerWallRight
+      operation: subtract
+    - what: case
+      name: _openingRight
+      operation: subtract
+    - what: case
+      name: _openingFillRight
+      operation: add
+  _holes:
+    - name: _mounting
+      extrude: 5
+  _plateHoles:
+    - name: _plateHole
+      extrude: 4
+  _plateHolesRight:
+    - name: _plateHoleRight
+      extrude: 4
+  _standoffs:
+    - name: _standoff
+      extrude: 5
+  _holesRight:
+    - name: _mountingRight
+      extrude: 5
+  _standoffsRight:
+    - name: _standoffRight
+      extrude: 5
+  case:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _holes
+      operation: subtract
+    - what: case
+      name: xlBottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
+    - what: case
+      name: _resetOpeningCase
+      operation: subtract
+    - what: case
+      name: _resetOpeningCaseFill
+      operation: add
+  caseRight:
+    - what: case
+      name: _standoffsRight
+      operation: add
+    - what: case
+      name: _holesRight
+      operation: subtract
+    - what: case
+      name: xlBottomRight
+      operation: add
+    - what: case
+      name: wallRight
+      operation: add
+  switchPlateWithStandLeft:
+    - what: case
+      name: _switchPlate
+      operation: add
+    - what: case
+      name: _plateHoles
+      operation: subtract
+    - what: case
+      name: _switches
+      operation: subtract
+    - what: case
+      name: _XLextraArea
+      operation: subtract
+    - what: case
+      name: _extraAreaUp
+      operation: add
+      shift: [-1, -0.5, 0]
+    - what: case
+      name: stand
+      operation: add
+      shift: [-1, -0.5, 0]
+    - what: case
+      name: _openingForStand
+      operation: subtract
+  switchPlateWithStandRight:
+    - what: case
+      name: _switchPlateRight
+      operation: add
+    - what: case
+      name: _plateHolesRight
+      operation: subtract
+    - what: case
+      name: _switches
+      operation: subtract
+    - what: case
+      name: _XLextraAreaRight
+      operation: subtract
+    - what: case
+      name: _extraAreaUpRight
+      operation: add
+      shift: [1, -0.5, 0]
+    - what: case
+      name: _standRight
+      operation: add
+      shift: [1, -0.5, 0]
+    - what: case
+      name: _openingForStandRight
+      operation: subtract
+    - what: case
+      name: _resetOpeningRight
+      operation: subtract
+
+
