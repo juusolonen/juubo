@@ -267,11 +267,11 @@ outlines:
       operation: stack
       points:
         - ref: mirror_matrix_inner_top
-          shift: [0.53kx+2.2,0.52dpy+0.3]
+          shift: [0.53kx+2.2,0.53dpy+0.35]
         - ref: mirror_matrix_inner_bottom
           shift: [0.53kx+2.2,0.15ky+1.35]
         - ref: mirror_matrix_inner_bottom
-          shift: [2.1kx+0.8,0.15ky+1.35]
+          shift: [2.15kx+0.5,0.15ky+1.35]
         - ref: mirror_matrix_inner_top
           shift: [2.1kx+0.5,0.38dpy+0.5]
   _wallOpening:
@@ -292,12 +292,18 @@ outlines:
       adjust:
           shift: [1.76px, 1.8px]
       size: [4,6]
-  _resetOpeningRight:
+  _resetOpeningCaseRight:
     - what: rectangle
       where: mirror_matrix_inner_bottom
       adjust:
-          shift: [1.6px, 1.8px]
-      size: [8,6]
+          shift: [1.9px, 1.8px]
+      size: [9,6]
+  _resetOpeningCaseFillRight:
+    - what: rectangle
+      where: mirror_matrix_inner_bottom
+      adjust:
+          shift: [1.76px, 1.8px]
+      size: [4,6]
   _wallOpeningFillUsb:
     - what: rectangle
       where: matrix_inner_home
@@ -896,9 +902,12 @@ cases:
   _resetOpeningCaseFill:
     - name: _resetOpeningCaseFill
       extrude: 6.6
-  _resetOpeningRight:
-    - name: _resetOpeningRight
-      extrude: 4
+  _resetOpeningCaseRight:
+    - name: _resetOpeningCaseRight
+      extrude: 10.6
+  _resetOpeningCaseFillRight:
+    - name: _resetOpeningCaseFillRight
+      extrude: 6.6
   bottomRight:
     - name: boardRight
       extrude: 1
@@ -1010,6 +1019,12 @@ cases:
     - what: case
       name: wallRight
       operation: add
+    - what: case
+      name: _resetOpeningCaseRight
+      operation: subtract   
+    - what: case
+      name: _resetOpeningCaseFillRight
+      operation: add
   switchPlateWithStandLeft:
     - what: case
       name: _switchPlate
@@ -1057,9 +1072,6 @@ cases:
       shift: [1, -0.5, 0]
     - what: case
       name: _openingForStandRight
-      operation: subtract
-    - what: case
-      name: _resetOpeningRight
       operation: subtract
 
 
