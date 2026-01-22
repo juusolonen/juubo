@@ -28,43 +28,46 @@ points:
               #TODO: nets
             top:
               skip: true
+          key:
+            column_net: P21
+            #mirror.column_net: P4
         pinky:
           rows:
             mod:
               skip: true
           key:
-            column_net: P21
+            column_net: P20
             mirror.column_net: P4
         ring:
           rows.mod.skip: true
           key:
             stagger: 5
-            column_net: P20
+            column_net: P19
             mirror.column_net: P5
         middle:
           key:
             stagger: 2.5
-            column_net: P19
+            column_net: P18
             mirror.column_net: P6
         index:
           key:
             stagger: -2.5
-            column_net: P18
+            column_net: P15
             mirror.column_net: P7
         inner:
           key:
             stagger: -2.5
-            column_net: P15
+            column_net: P14
             mirror.column_net: P8
       rows:
         bottom:
-          row_net: P10
+          row_net: P3
           mirror.row_net: P16
         home:
-          row_net: P16
+          row_net: P10
           mirror.row_net: P14
         top:
-          row_net: P14
+          row_net: P16
           mirror.row_net: P15
     thumbs:
       key:
@@ -95,7 +98,7 @@ points:
             mirror.column_net: P8
       rows:
         cluster:
-          row_net: P6
+          row_net: P2
           mirror.row_net: P10
 outlines:
   raw:
