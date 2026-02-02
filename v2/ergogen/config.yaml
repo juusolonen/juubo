@@ -25,50 +25,49 @@ points:
           rows:
             mod:
               skip: true
-              #TODO: nets
             top:
               skip: true
           key:
             column_net: P21
-            #mirror.column_net: P4
+            mirror.column_net: P2
         pinky:
           rows:
             mod:
               skip: true
           key:
             column_net: P20
-            mirror.column_net: P4
+            mirror.column_net: P3
         ring:
           rows.mod.skip: true
           key:
             stagger: 5
             column_net: P19
-            mirror.column_net: P5
+            mirror.column_net: P4
         middle:
           key:
             stagger: 2.5
             column_net: P18
-            mirror.column_net: P6
+            mirror.column_net: P5
         index:
           key:
             stagger: -2.5
             column_net: P15
-            mirror.column_net: P7
+            mirror.column_net: P6
         inner:
           key:
             stagger: -2.5
             column_net: P14
-            mirror.column_net: P8
+            mirror.column_net: P7
       rows:
         bottom:
-          row_net: P3
-          mirror.row_net: P16
+          row_net: P9
+          mirror.row_net: P10
         home:
           row_net: P10
-          mirror.row_net: P14
+          mirror.row_net: P9
         top:
           row_net: P16
-          mirror.row_net: P15
+          mirror.row_net: P8
     thumbs:
       key:
         padding: py
@@ -80,26 +79,26 @@ points:
         layer:
           key:
             splay: -15
-            column_net: P19
-            mirror.column_net: P6
+            column_net: P18
+            mirror.column_net: P5
         space:
           key:
             rotate: -115
             shift: [4,-2]
             width: 1.5kx
-            column_net: P18
-            mirror.column_net: P7
+            column_net: P15
+            mirror.column_net: P6
         extra:
           key:
             rotate: -120
             shift: [2,-12]
             width: 1.5kx
-            column_net: P15
-            mirror.column_net: P8
+            column_net: P14
+            mirror.column_net: P7
       rows:
         cluster:
-          row_net: P2
-          mirror.row_net: P10
+          row_net: P8
+          mirror.row_net: P16
 outlines:
   raw:
     - what: rectangle
@@ -1076,5 +1075,3 @@ cases:
     - what: case
       name: _openingForStandRight
       operation: subtract
-
-
