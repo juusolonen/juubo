@@ -287,13 +287,13 @@ outlines:
       where: matrix_inner_bottom
       adjust:
           shift: [1.9px, 1.8px]
-      size: [9,6]
+      size: [8.1,6]
   _resetOpeningCaseFill:
     - what: rectangle
       where: matrix_inner_bottom
       adjust:
-          shift: [1.76px, 1.8px]
-      size: [4,6]
+          shift: [1.788px, 1.8px]
+      size: [2.95,6]
   _resetOpeningCaseRight:
     - what: rectangle
       where: mirror_matrix_inner_bottom
@@ -1075,3 +1075,5 @@ cases:
     - what: case
       name: _openingForStandRight
       operation: subtract
+
+
