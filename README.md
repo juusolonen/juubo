@@ -8,6 +8,8 @@ juubo keyboard is designed with [Ergogen](https://ergogen.cache.works/) followin
 
 ### V1
 
+![alt text](juubov1.jpeg "Semi-retired V1")
+
 V1 is a 36-key wired split keyboard, with rotary encoders on both side. It is wired with ProMicro RP2040 controllers, running with QMK. The pcb is designed so it can be made wireless with Nice!Nano controller and ZMK firmware (Firmware not provided, but V2 firmware can probably be modified eventually for V1 also). 
 
 > `qmk` directory in this repo contains needed files to get the qmk firmware running. Note that the rotary encoders are not perfect so they might need some tweaking.
