@@ -18,6 +18,9 @@ V1 is a 36-key wired split keyboard, with rotary encoders on both side. It is wi
 
 ### V2
 
+![alt text](juubov2_case.jpeg "Case V2")
+*3D printed case for the upcoming V2*
+
 V2 is a 40-key wireless split keyboard and it does not have the rotary encoders anymore. Designer for Nice!Nano controller. Firmware will be built with ZMK eventually.
 
 ### ergogen
