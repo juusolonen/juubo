@@ -240,6 +240,18 @@ outlines:
           shift: [2.1kx-0.2,0.15ky+1.65]
         - ref: matrix_inner_top
           shift: [2.1kx-1,0.38dpy-0.5]
+  _displayArea:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [17.65,-0.62]
+        - ref: matrix_inner_top
+          shift: [17.65,-25.98]
+        - ref: matrix_inner_top
+          shift: [28.45,-25.98]
+        - ref: matrix_inner_top
+          shift: [28.45,-0.62]
   _XLextraArea:
     - what: polygon
       operation: stack
@@ -629,7 +641,17 @@ pcbs:
     outlines:
       main:
         outline: board
+    template: kicad8
     footprints:
+      nice_view:
+        what: ceoloide/display_nice_view
+        where:
+          ref: matrix_inner_home
+          shift: [px,0.5px-5]
+        params:
+          MOSI: P2
+          CS: P1
+          SCK: P3
       mx_hotswap:
         what: mx
         where: /^(matrix|thumbs)_.*/ 
@@ -672,9 +694,9 @@ pcbs:
           neg: GND
         where:
           ref: matrix_inner_home
-          shift: [px,-0.45py]
+          shift: [px+13,-0.45py+4]
         adjust:
-          rotate: -90
+          rotate: -180
       reset:
         what: button
         params:
@@ -852,6 +874,10 @@ cases:
     - name: _extraArea
       shift: [0, 0, 8]
       extrude: 1
+  _displayHole:
+    - name: _displayArea
+      shift: [0, 0, 8]
+      extrude: 2
   _extraAreaUpRight:
     - name: _extraAreaRight
       shift: [0, 0, 8]
@@ -1043,6 +1069,10 @@ cases:
     - what: case
       name: _extraAreaUp
       operation: add
+      shift: [-1, -0.5, 0]
+    - what: case
+      name: _displayHole
+      operation: subtract
       shift: [-1, -0.5, 0]
     - what: case
       name: stand
