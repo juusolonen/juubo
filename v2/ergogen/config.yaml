@@ -80,21 +80,21 @@ points:
           key:
             splay: -15
             column_net: P18
-            mirror.column_net: P5
+            mirror.column_net: P6
         space:
           key:
             rotate: -115
             shift: [4,-2]
             width: 1.5kx
             column_net: P15
-            mirror.column_net: P6
+            mirror.column_net: P7
         extra:
           key:
             rotate: -120
             shift: [2,-12]
             width: 1.5kx
             column_net: P14
-            mirror.column_net: P7
+            mirror.column_net: P8
       rows:
         cluster:
           row_net: P8
@@ -1133,3 +1133,5 @@ cases:
     - what: case
       name: _openingForStandRight
       operation: subtract
+
+
