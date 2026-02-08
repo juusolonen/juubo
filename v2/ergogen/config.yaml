@@ -64,7 +64,7 @@ points:
           mirror.row_net: P16
         home:
           row_net: P10
-          mirror.row_net: P10
+          mirror.row_net: P14
         top:
           row_net: P16
           mirror.row_net: P9
@@ -98,7 +98,7 @@ points:
       rows:
         cluster:
           row_net: P8
-          mirror.row_net: P14
+          mirror.row_net: P10
 outlines:
   raw:
     - what: rectangle
