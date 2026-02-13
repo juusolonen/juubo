@@ -23,6 +23,8 @@ V1 is a 36-key wired split keyboard, with rotary encoders on both side. It is wi
 
 V2 is a 40-key wireless split keyboard and it does not have the rotary encoders anymore. Designer for Nice!Nano controller. Firmware will be built with ZMK eventually.
 
+> [ZMK module for firmware](https://github.com/juusolonen/zmk-juubo-module) is not tested yet.
+
 ### ergogen
 
 This directory contains the ergogen files used for V1. The mountinghole.js footprint is also used in V2, though.
