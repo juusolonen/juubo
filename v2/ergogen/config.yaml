@@ -937,31 +937,31 @@ cases:
       extrude: 1
   _outerWall:
     - name: xlBoard
-      extrude: 10.6
+      extrude: 12.6
   _innerWall:
     - name: board
-      extrude: 10.6
+      extrude: 12.6
   _opening:
     - name: _wallOpening
-      extrude: 10.6
+      extrude: 12.6
   _openingForStand:
     - name: _wallOpening
       extrude: 6.2
   _wallOpeningFill:
     - name: _wallOpeningFillUsb
-      extrude: 3
+      extrude: 5
   _resetOpeningCase:
     - name: _resetOpeningCase
-      extrude: 10.6
+      extrude: 12.6
   _resetOpeningCaseFill:
     - name: _resetOpeningCaseFill
-      extrude: 6.6
+      extrude: 8.6
   _resetOpeningCaseRight:
     - name: _resetOpeningCaseRight
-      extrude: 10.6
+      extrude: 12.6
   _resetOpeningCaseFillRight:
     - name: _resetOpeningCaseFillRight
-      extrude: 6.6
+      extrude: 8.6
   bottomRight:
     - name: boardRight
       extrude: 1
@@ -970,19 +970,19 @@ cases:
       extrude: 1
   _outerWallRight:
     - name: xlBoardRight
-      extrude: 10.6
+      extrude: 12.6
   _innerWallRight:
     - name: boardRight
-      extrude: 10.6
+      extrude: 12.6
   _openingRight:
     - name: _wallOpeningRight
-      extrude: 10.6
+      extrude: 12.6
   _openingForStandRight:
     - name: _wallOpeningRight
       extrude: 3
   _openingFillRight:
     - name: _wallOpeningFillUsbRight
-      extrude: 3
+      extrude: 5
   wall:
     - what: case
       name: _outerWall
@@ -1025,7 +1025,7 @@ cases:
       operation: add
   _holes:
     - name: _mounting
-      extrude: 5
+      extrude: 7
   _plateHoles:
     - name: _plateHole
       extrude: 4
@@ -1034,13 +1034,13 @@ cases:
       extrude: 4
   _standoffs:
     - name: _standoff
-      extrude: 5
+      extrude: 7
   _holesRight:
     - name: _mountingRight
-      extrude: 5
+      extrude: 7
   _standoffsRight:
     - name: _standoffRight
-      extrude: 5
+      extrude: 7
   case:
     - what: case
       name: _standoffs
